@@ -1,0 +1,19 @@
+Los N primeros primos
+
+El factorial de un número
+
+El área de un triángulo dadas base y altura
+
+El área de un triangulo dados sus 3 lados
+
+Mostrar la pirámide de pascal de altura N
+
+Calcular un número combinatorio dados m y n
+
+Calcular un número hexadecimal dado
+
+Mostrar la sucesión de Fibonacci
+
+Convertir una cadena a la suma de los códigos ascii de sus caracteres.
+
+Dados 2 números calcular su MCD y su mcm.

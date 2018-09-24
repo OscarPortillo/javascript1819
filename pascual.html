@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <style>
+            body{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var N=6;
+            for(var i = 0 ; i < N ; i++){
+                var cadena='';
+                for(var j = 0 ; j <=i; j++){
+                    var r=1;
+                    var m=i;
+                    var n=j;
+                    //document.write(i+' '+j);
+                    for(var k = m ; k > m-n;k--){
+                        r*=k;
+                    }
+                    for(var k = 1 ;k <=n ; k++){
+                        r/=k;
+                    }
+                    cadena=cadena+r+" ";
+                }//segundo for interno
+                document.write(cadena+"<br>");
+            }//for externo
+        </script>
+    </body>
+</html>

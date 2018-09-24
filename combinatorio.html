@@ -1,0 +1,40 @@
+<html>
+    <head>
+            <title>Numero Combinatorio</title>
+    </head>
+    <body>
+        <script>
+            var m=10;
+            var n=4;
+            var r=1;
+            var s=1;
+            var t=1
+//m debe ser mayor o igual que n y ambos numeros positivos
+            if(m>=n && m && n){
+  //La formula es C=m!/n!(m-n)!
+  /*for(var i=1;i<=m;i++){
+    r*=i
+  }
+  for(var i=1;i<=n;i++){
+    s*=i
+  }
+  for(var i=1;i<=(m-n);i++){
+    t*=i
+  }
+  console.log(r/(s*t))
+  */
+  //optimizando un poco simplificamos el (m-n)!
+                for(var i=m;i>m-n;i--){
+                    r*=i;
+                }
+                for(var i=1;i<=n;i++){
+                    r/=i;
+                }
+                console.log(r);
+            }else{
+                console.log('m debe ser mayor o igual que n y ambos numeros positivos');
+                document.write('m debe ser mayor o igual que n y ambos numeros positivos')
+            }
+        </script> 
+    </body>
+</html>

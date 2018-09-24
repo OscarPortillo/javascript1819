@@ -1,0 +1,23 @@
+<htm>
+    <head>
+        <title>Ejercicio 01</title>
+    
+    </head>
+    <body>
+        <script>
+            var num=30;
+            for(var i = 2 ; i < num ; i++){
+                var posible=true;
+                for(var j = 2 ; j < i ; j ++){
+                    if(i%j==0){
+                        var posible=false;
+                    }
+                }
+                if (posible){
+                document.write(i+" ");
+            }
+            }
+            
+        </script>
+    </body>
+</htm> 

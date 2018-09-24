@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Triangulo sabiendo los 3 lados</title>
+    </head>
+    <body>
+        <script>
+            var a=3;
+            var b=5;
+            var c=4;
+            
+if(a+b>c && a+c>b && b+c>a){
+    var s=(a+b+c)/2;
+    var A=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+    console.log(Math.round(A*1000)/1000);
+    }else{
+    console.log('a, b y c no pueden ser los lados de un triangulo. ');
+}
+        </script>
+    </body>
+
+</html>

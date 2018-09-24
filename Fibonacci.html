@@ -1,0 +1,22 @@
+<htm>
+    <head>
+        <title>Fibonacci</title>
+    
+    </head>
+    <body>
+        <script>
+            var N=20;
+            var a=0;
+            var b=1;
+            var c=0;
+            document.write(a);
+            document.write(b+"<br>");
+            for (var i =0; i < N-2; i++){
+                c=a+b;
+                document.write(c+",");
+                a=b;
+                b=c;
+            }
+        </script>
+    </body>
+</htm> 
