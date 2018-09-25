@@ -1,0 +1,36 @@
+<htm>
+    <head>
+        <title>Ejercicio 01</title>
+    
+    </head>
+    <body>
+        <script>
+            var primos=[];
+            var num=30;
+            for(var i = 2 ; i < num ; i++){
+                var posible=true;
+                for(var j = 2 ; j < i ; j ++){
+                    if(i%j==0){
+                        var posible=false;
+                    }
+                }
+                if (posible){
+                    document.write(i+" ");
+                    
+                }
+            }
+            var i=2;
+            while(primos.length<=num){
+                var posible=true;
+                for(var j=2;j<i;j++){
+                    posible=posible && i%j;
+                }
+                if(posible){
+                    primos.push(a.join(' - '));
+                    
+                }
+            }
+            
+        </script>
+    </body>
+</htm> 
