@@ -1,0 +1,21 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var cadena="HUEUOESPLTTOAAANQLTY";
+            var n=4;
+            var l=5;
+            var cifrado = '';
+            for (var j = 0; j < n ; j++){
+                for(var i = 0; i < cadena.length; i++){
+                    if ( i % n== j){
+                        cifrado+=cadena[i];
+                    }
+                }
+            }
+            document.write(cifrado);
+        </script>
+    </body>
+
+</html>

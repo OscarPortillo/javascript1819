@@ -17,3 +17,6 @@ Mostrar la sucesión de Fibonacci
 Convertir una cadena a la suma de los códigos ascii de sus caracteres.
 
 Dados 2 números calcular su MCD y su mcm.
+
+
+aux 125;

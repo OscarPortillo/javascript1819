@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Cifrado cesar</title>
+    </head>
+    <body>
+        <script>
+            var frase="hasta mañana";
+            var espacio=" ";
+            var aux="";
+            var cifrado="";
+            var minus=0;
+            for(var j = 0; j< frase.length; j++){
+                if(frase.charAt[i]<97){
+                    minus++;
+                }
+                if(frase.charAt[i]>122){
+                    minus++;
+                }
+            }
+            if(minus==0){
+                 for(var i = 0; i < frase.length; i++){
+                    aux=frase.charCodeAt(i)+11;//obtengo el codigo ascii
+                    //document.write(espacio.charCodeAt(0));=32
+                    if(aux==36){
+                        aux=aux-11;
+                        
+                    }
+                     if(aux>122){//cojer solo lo que se pasa
+                         var auxA=aux-122;;
+                         aux=97+auxA;
+                         
+                     }
+                    cifrado=String.fromCharCode(aux);//
+                    document.write(cifrado);
+                }
+            }else{
+                document.write("no se permiten mayúsculas")
+            }
+           
+        </script>
+    </body>
+</html>
