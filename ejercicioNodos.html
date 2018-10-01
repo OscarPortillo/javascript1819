@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lista de la compra</title>
+    </head>
+    <body>
+        <ul id="lista">
+            <li>ANIMALES
+                <button onclick="masBicho()">+</button>
+            </li>
+                <ul class="animales">
+                    <li>PERRO</li>
+                    <li>GATO</li>
+                </ul>               
+            
+            <li class="lista">VERDURAS
+                <button onclick="masVerde()">+</button>
+            </li>
+                <ul>
+                    <li>BORRAJA</li>
+                    <li>ACELGA</li>
+                </ul>
+        </ul>
+        <script>
+            function añadir(n,texto){
+                var l = document.getElementById('lista');
+                var u =l.getElementsByTagName('ul');
+                document.write(u[n].innerHTML);
+                u[n].innerHTML+="<li>"+texto+"</li>";
+            }
+            function masBicho(){
+                añadir(0,'RATÓn');
+            }
+        </script>
+    </body>
+</html>
