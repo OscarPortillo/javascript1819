@@ -22,15 +22,31 @@
                 </ul>
         </ul>
         <script>
-            function añadir(n,texto){
-                var l = document.getElementById('lista');
-                var u =l.getElementsByTagName('ul');
-                document.write(u[n].innerHTML);
-                u[n].innerHTML+="<li>"+texto+"</li>";
+            function anadir(n,texto){
+              //alert(texto)
+              l=document.getElementById('lista')
+              u=l.getElementsByTagName('ul')
+              console.log(u[n].innerHTML)
+              u[n].innerHTML+="<li>"+texto+"</li>" 
             }
+           /* function masBicho(){
+              anadir(0,'RATÓN')
+            }
+            function masVerde(){
+              anadir(1,'COL')
+            }*/
+            var animal=["Conejo","Caballo","Pez","Puercoespin","Zuricata","Lombriz","Pájaro","Serpiente"];
+            var verdura=["zanahoria","rábano","nabo","cebolla","coliflor","brócoli","alcachofa","espinaca"];
+            var contAnimal=0;
             function masBicho(){
-                añadir(0,'RATÓn');
+                anadir(0,animal[contAnimal])
+                contAnimal++
             }
+            var contaVerdura=0;
+            function masVerde(){
+                anadir(1,verdura[contaVerdura])
+                contaVerdura++
+            } 
         </script>
     </body>
 </html>
