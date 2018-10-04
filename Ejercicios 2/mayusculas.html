@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <title>solo mayusculas wey</title>
+</head>
+
+<body>
+    <script>
+        function may(c){
+            r='';
+            for(l of c){
+                if((l>= 'A' && l <= 'Z') || l == 'Ñ')r+=l;
+            }
+            return r;
+        }
+        var cad= 'Hola SOY OscaR';
+        document.write(may(cad));
+    </script>
+    <!--
+        Realiza una función que dada una cadena cualquiera devuelva SOLO las letras mayusculas
+         en el orden que se encuentran.
+
+         -->
+</body>
+
+</html>

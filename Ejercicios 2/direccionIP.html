@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+
+    <title></title>
+</head>
+
+<body>
+
+    <!-- Realiza una función que dada una dirección IP 
+    (por ejemplo: 10.0.1.0/22 ó 127.2.0.8/32)
+    calcule el número de host conectables.
+    (Recuerda los conceptos de Redes de 1º )-->
+
+    <h2>Calcúlo de ip</h2>
+    <script>
+        function calculo(x) {
+            var a = x.split('/');
+            document.write(a+" = ");
+            return((2**(32-a[1]))-2);
+        }
+        document.write(calculo('10.223.1.0/22')+"<br>");
+        document.write(calculo('10.223.1.0/16')+"<br>");
+        document.write(calculo('10.223.1.0/28')+"<br>");
+        document.write(calculo('10.223.1.0/30')+"<br>");
+
+    </script>
+</body>
+
+</html>

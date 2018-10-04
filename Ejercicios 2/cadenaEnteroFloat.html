@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+    <script>
+        var cad1='hola';
+        var cad2='123';
+        var cad3='123.23';
+        var cad4='12.33.43';
+        function tipo(x){
+            if(!isNaN(x)){
+                if(x==Math.round(x)){
+                    return 'integer';
+                }
+                return 'float';
+            }
+            return 'String';
+        }
+        document.write(tipo(cad1)+" <br>");
+        document.write(tipo(cad2)+" <br>");
+        document.write(tipo(cad3)+" <br>");
+        document.write(tipo(cad4)+" <br>");    
+    </script>
+<body>
+  
+</body>
+</html>

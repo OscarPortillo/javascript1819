@@ -1,0 +1,47 @@
+Realiza una función que devuelva si una cadena es un entero, un float o un string.
+
+Realiza una función que devuelva la suma de una serie variable de números elevados a un exponente dado. 
+La función tendrá la forma:
+
+	exp(2, 1, 2, 3)    //   resultado: 14 = 1^2 + 2^2 + 3^2
+
+	exp(2, 1, 1, 1, 2, 3)    //   resultado: 16 = 1^2 + 1^2 + 1^2 + 2^2 + 3^2
+
+Realiza una función que dada una dirección IP (por ejemplo: 10.0.1.0/22 ó 127.2.0.8/32)
+ calcule el número de host conectables.
+	(Recuerda los conceptos de Redes de 1º )
+
+
+Realiza una función que dada una cadena cualquiera devuelva SOLO las letras mayusculas
+ en el orden que se encuentran.
+
+  Dibuja mediante una función un triangulo invertido de altura n. 
+  Con los caracteres que reciba teniendo por defecto * y _
+
+  El resultado sale por pantalla y por consola.
+
+  Por ejemplo para la llamada tri(8):
+
+* _ _ _ _ _ _ _ _ _ _ _ _ _ *
+* * _ _ _ _ _ _ _ _ _ _ _ * *
+* * * _ _ _ _ _ _ _ _ _ * * *
+* * * * _ _ _ _ _ _ _ * * * *
+* * * * * _ _ _ _ _ * * * * *
+* * * * * * _ _ _ * * * * * *
+* * * * * * * _ * * * * * * *
+* * * * * * * * * * * * * * *
+
+Por ejemplo para la llamada tri(4):
+
+* _ _ _ _ _ *
+* * _ _ _ * *
+* * * _ * * *
+* * * * * * *
+
+Por ejemplo para la llamada tri(5,#,/)
+
+# / / / / / / / #
+# # / / / / / # #
+# # # / / / # # #
+# # # # / # # # #
+# # # # # # # # #

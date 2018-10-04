@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /*Realiza una función que devuelva la suma de una serie variable 
+        de números elevados a un exponente dado. 
+        La función tendrá la forma:
+
+	   exp(2, 1, 2, 3)    //   resultado: 14 = 1^2 + 2^2 + 3^2
+
+	   exp(2, 1, 1, 1, 2, 3)    //   resultado: 16 = 1^2 + 1^2 + 1^2 + 2^2 + 3^2*/
+        function expo(e,...valores){
+            var a = 0;
+            for(v of valores){//var i =0; i < valores.lengh;i ++ también sirve
+                a+= v ** e;
+            }
+            return a;
+        }
+        document.write(expo(3,1,1,3));
+    </script>
+</body>
+</html>
