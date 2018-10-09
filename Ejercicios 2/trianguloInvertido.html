@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <title>Triangulo invertido</title>
+</head>
+
+<body>
+    <script>
+        var tri = function(n,c = '*', h = "_"){
+            var k = n * 2 -1;
+            for( var i = 1 ; i <= n ; i++){
+                var s =[];
+                for(var j = 1 ; j <= k ; j++){
+                    if( j <= i || j >= k - i+ 1){
+                       s.push(c);                        
+                    } else {//if
+                       s.push(h);
+                    }//else
+                }//for interno
+                //document.write(s);
+                document.write(s.join(' ')+ '<br>');
+            }//for externo
+        }//function
+        
+        document.write(tri(5)+"<br>");
+        document.write(tri(5,"#","*"));
+    </script>
+</body>
+</html>
+
+ <!-- Dibuja mediante una función un triangulo invertido de altura n. 
+  Con los caracteres que reciba teniendo por defecto * y _
+
+  El resultado sale por pantalla y por consola.
+
+  Por ejemplo para la llamada tri(8):
+
+* _ _ _ _ _ _ _ _ _ _ _ _ _ *
+* * _ _ _ _ _ _ _ _ _ _ _ * *
+* * * _ _ _ _ _ _ _ _ _ * * *
+* * * * _ _ _ _ _ _ _ * * * *
+* * * * * _ _ _ _ _ * * * * *
+* * * * * * _ _ _ * * * * * *
+* * * * * * * _ * * * * * * *
+* * * * * * * * * * * * * * *
+
+Por ejemplo para la llamada tri(4):
+
+* _ _ _ _ _ *
+* * _ _ _ * *
+* * * _ * * *
+* * * * * * *
+
+Por ejemplo para la llamada tri(5,#,/)
+
+# / / / / / / / #
+# # / / / / / # #
+# # # / / / # # #
+# # # # / # # # #
+# # # # # # # # #-->

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        var tri = function(n,c='*',h='_'){
+          k=n*2-1;
+          for(var i = 1 ; i <= n ; i++){
+            var s='';
+            s+=(c+' ').repeat(i);
+            var a =k-i*2;
+            if(a<0)a=0
+            s+=(h+' ').repeat(a);
+            s+=(c+' ').repeat(i);
+            console.log(s);
+            document.write(s+'<br>');
+          }
+        }
+        document.write(tri(4));
+    </script>
+</body>
+</html>
