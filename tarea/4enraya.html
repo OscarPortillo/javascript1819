@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="">
+<html>
+
 <head>
-    <meta charset="utf-8">
-    <title>4 En Raya</title>
+    <meta charset="UTF-8">
+    <title>Conecta 4</title>
+    <link href="estilo.css"
+      rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <script src=""></script>
+
+    <script>
+        function crearTabla() {
+            document.write("<table border='1'>");
+                for( var j = 1 ;  j <= 6 ; j++){
+                    var idCol = j;
+                    document.write("<tr id="+idCol+">");
+                    for (var i = 7; i > 0; i--) {
+                        var idFila = i;
+                        document.write("<td id="+idFila+"></td>");
+                    }//for paera las filas
+                     
+                    document.write("</tr>");
+                    
+                }//for para las columnas
+            document.write("</table>");
+
+        }
+        
+        document.write("<div>");
+        document.write(crearTabla());
+        document.write("</div>");
+    </script>
 </body>
+
 </html>
