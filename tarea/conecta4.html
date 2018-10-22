@@ -51,6 +51,10 @@
         output.yellow {
         display: block;
         }
+        #reset{
+            background-color: blue;
+            text-decoration: none;
+        }
     </style>
     <body>
         <script>
@@ -74,6 +78,12 @@
             
         </script>
         <output> Gana!</output>
+        <a href="conecta4.html" id="reset">
+            <br><h1>Reiniciar</h1>
+            <script>
+                document.write(crearTable()."Reiniciar");
+            </script>
+        </a>
         <script>            
         var jugador = "red";
         const players = { "red": "yellow", "yellow": "red" },
