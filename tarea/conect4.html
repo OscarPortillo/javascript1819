@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 en raya</title>
+    <link rel="stylesheet" href="conect4.css" />
+</head>
+
+<body>
+    <div id="tabla">
+        <script>
+            document.write(crearTabla());
+
+        </script>
+
+    </div>
+    <!--<div class='boton'><button onclick='crearTabla()'>resetear</button></div>-->
+    <div class="reset">
+        <a href="conect4.html">Reiniciar</a>
+    </div>
+    
+    <script>
+        var juego_activo = false;
+        var jugador_activo = "rojo";
+        var tablero;
+        var mensaje = 0;
+        function dibujar(columna) {
+            for (var i = tablero[columna].length - 1; i > 0; i--) {
+                if (tablero[columna][i].innerHTML == "") {
+                    tablero[columna][i].innerHTML = jugador_activo;
+                    tablero[columna][i].className += " ficha_" + jugador_activo;
+                    if (jugador_activo == "azul") {
+                        jugador_activo = "rojo";
+                    } else {
+                        jugador_activo = "azul";
+                    }
+                    break;
+                }//if externo
+            }
+        }
+
+        window.onload = crearTabla();
+
+
+        function crearTabla() {
+            tablero = [];
+            var tabla = "";
+
+            for (var i = 1; i <= 7; i++) {
+                tabla += "<div id='columna" + i + "' class='columna' onclick='jugar(" + i + ")'>";
+                tablero[i] = new Array();
+                for (var j = 1; j <= 6; j++) {
+                    tabla += "<div id='pos" + i + "-" + j + "' class='col'></div>";
+                    tablero[i][j] = document.getElementById("pos" + i + "-" + j);
+
+                }
+                tabla += "<div></div></div>"; //esta es la buena
+
+
+
+            }
+
+            document.getElementById("tabla").innerHTML = tabla;
+
+
+            for (var i = 1; i <= 7; i++) {
+
+                tablero[i] = new Array();
+                for (var j = 1; j <= 6; j++) {
+
+                    tablero[i][j] = document.getElementById("pos" + i + "-" + j);
+
+                }
+
+            }
+        } //function crear tabla
+
+
+
+        function jugar(columna) {
+            dibujar(columna);
+            if (comprobarGanador()) {
+                //alert("se acabo");
+            } else if (empate()) {
+                // alert("empate");
+            }
+        }
+
+        function comprobarGanador() {
+            var jugador;
+            if (jugador_activo == "azul") {
+                jugador = "rojo";
+            } else {
+                jugador = "azul";
+            }
+            for (var i = 1; i < tablero.length; i++) {
+                for (var j = 1; j < tablero[1].length; j++) {
+                    if (comprobarHorizontal(i, j, jugador)) {
+                        
+                        alert("Gana: " + jugador);
+                        return true;
+                    } else if (comprobarVertical(i, j, jugador)) {
+                        document.write("Gana: " + jugador);
+                        return true;
+                    } else if (comprobarDiagonalDown(i, j, jugador)) {
+                        document.write("Gana: " + jugador);
+                        return true;
+                    } else if (comprobarDiagonalUp(i, j, jugador)) {
+                        document.write("Gana: " + jugador);
+                        return true;
+                    }
+                }
+
+            }
+            return false;
+        }
+        //comprobar horizontal
+        function comprobarHorizontal(fila, columna, jugador) {
+            var seguidas = 0;
+            for (var i = columna; i < tablero[1].length; i++) {
+                if (tablero[fila][i].innerHTML == jugador) {
+                    seguidas++;
+                } else {
+                    seguidas = 0;
+                }
+                if (seguidas == 4) {
+                    //alert("gana jugador");
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        //comprobar diagonal
+        function comprobarDiagonalDown(fila, columna, jugador) {
+            var k;
+            var seguidas = 0;
+            for (var i = fila, k = columna; i < tablero.length && k < tablero[1].length; i++, k++) {
+                // alert(i+" "+k);
+                if (tablero[i][k].innerHTML == jugador) {
+                    seguidas++;
+                } else {
+                    seguidas = 0;
+                }
+                if (seguidas == 4) {
+                    return true;
+                    //alert("gana jugador");
+                }
+            }
+
+            return false;
+
+        }
+
+        function comprobarDiagonalUp(fila, columna, jugador) {
+            var k;
+            var seguidas = 0;
+            for (var i = fila, k = columna; i > 0 && k < tablero[1].length; i--, k++) {
+                // alert(i+" "+k);
+                if (tablero[i][k].innerHTML == jugador) {
+                    seguidas++;
+                } else {
+                    seguidas = 0;
+                }
+                if (seguidas == 4) {
+
+                    return true;
+                    //alert("gana jugador");
+                }
+            }
+
+            return false;
+
+        }
+
+        //comprobar vertical
+        function comprobarVertical(fila, columna, jugador) {
+            var seguidas = 0;
+            for (var i = fila; i < tablero.length; i++) {
+                if (tablero[i][columna].innerHTML == jugador) {
+                    seguidas++;
+                } else {
+                    seguidas = 0;
+                }
+                if (seguidas == 4) {
+                    //alert("gana jugador");
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+        function empate() {
+            //    alert();
+            var empate = true;
+            for (var i = 1; i < tablero.length; i++) {
+                for (var j = 1; j < tablero[1].length; j++) {
+
+                    if (tablero[i][j].innerHTML == "") {
+                        empate = false;
+                        //    alert(i+" "+j);
+                    }
+                }
+            }
+            return empate;
+        }
+
+    </script>
+</body>
+
+</html>
