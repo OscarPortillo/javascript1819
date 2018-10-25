@@ -1,0 +1,55 @@
+body {
+        padding: 1em 3em;
+        background: white;
+        text-align: center;
+        width: 700px;
+    }
+
+    #tabla {
+        height: 300px;
+    }
+
+    .reset {
+        display: block;
+        width: 150px;
+        clear: both;
+        border:  solid black;
+        
+    }
+
+    .reset,
+    a {
+        text-decoration: none;
+
+    }
+
+    .columna {
+        width: 50px;
+        background-color:royalblue;
+        float: left;
+        align-content: center;
+    }
+
+    .fila {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        clear: both;
+        background-color: white;       
+
+    }
+
+
+    .ficha_rojo {
+        background: red;
+        margin: 0px;
+        color: red;
+        
+        
+    }
+
+    .ficha_azul {
+        background: blue;
+        margin: 0px;
+        color: blue;
+    }

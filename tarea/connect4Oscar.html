@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 en raya</title>
+    <link rel="stylesheet" href="connect4Oscar.css">
+</head>
+
+<body>
+    <!--<div id='tabla'></div>-->
+    
+    
+        
+    
+    <script>
+        var juego_activo = false;
+        var turnoJugador = "rojo";
+        var tablero;
+
+        function crearTabla() {
+            tablero = [];
+            var tabla = "";
+            document.write("<div id='tabla'>");
+            for (var i = 1; i <= 7; i++) {
+                //onclick='jugar(" + i + ")'
+                tabla += "<div id='columna" + i + "' class='columna' onclick='jugar(" + i + ")'>";
+                tablero[i] = new Array();
+                for (var j = 1; j <= 6; j++) {
+                    tabla += "<div id='posicionFila" + i + "-" + j + "' class='fila'></div>";
+                    tablero[i][j] = document.getElementById("posicionFila" + i + "-" + j);
+                } //fon interno
+                tabla += "</div>"; //esta es la buen
+            } //for externo
+            document.write("</div>");
+            document.write("<div class='reset'>");
+            document.write("<a href='connect4Oscar.html'>Reiniciar</a>");
+            document.write("</div>");
+            document.getElementById("tabla").innerHTML = tabla;
+            for (var i = 1; i <= 7; i++) {
+                tablero[i] = new Array();
+                for (var j = 1; j <= 6; j++) {
+                    tablero[i][j] = document.getElementById("posicionFila" + i + "-" + j);
+                } //for interno
+            } //for externo
+        } //function crear tabla
+        function pintar(columna) {
+            for (var i = tablero[columna].length - 1; i > 0; i--) {
+                if (tablero[columna][i].innerHTML == "") {
+                    tablero[columna][i].innerHTML = turnoJugador;
+                    tablero[columna][i].className += " ficha_" + turnoJugador;
+                    if (turnoJugador == "azul") {
+                        turnoJugador = "rojo";
+                    } else {
+                        turnoJugador = "azul";
+                    }
+                    break;
+                } //if
+            } //for
+        } //funcion pintar
+
+        window.onload = crearTabla();
+
+        function jugar(columna) {
+            pintar(columna);
+            if (comprobarGanador()) {
+                //document.write(" se acabo");
+            } else if (empate()) {
+                document.write("empate");
+            }
+        } //jugar funcion
+
+        function comprobarGanador() {
+            var jugador;
+            if (turnoJugador == "rojo") {
+                jugador = "rojo";
+            } else {
+                jugador = "azul";
+            }
+            for (var i = 1; i < tablero.length; i++) {
+                for (var j = 1; j < tablero[1].length; j++) {
+                    if (comprobarHorizontal(i, j, jugador)) {
+                        document.write("Gana: " + turnoJugador);
+                        return true;
+                    } else if (comprobarVertical(i, j, jugador)) {
+                        document.write("Gana: " + turnoJugador);
+                        return true;
+                    } else if (comprobarDiagonalAbajo(i, j, jugador)) {
+                        document.write("Gana: " + turnoJugador);
+                        return true;
+                    } else if (comprobarDiagonalArriba(i, j, jugador)) {
+                        document.write("Gana: " + turnoJugador);
+                        return true;
+                    } //else if
+                } //for interno
+            } //for externo
+            return false;
+        } //funcion comprobar ganador
+
+        function comprobarHorizontal(fila, columna, jugador) {
+            var coincidencias = 0;
+            for (var i = columna; i < tablero[1].length; i++) {
+                if (tablero[fila][i].innerHTML == jugador) {
+                    coincidencias++;
+                } else {
+                    coincidencias = 0;
+                }
+                if (coincidencias == 4) {
+                    //document.write("gana jugador");
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        //comprobar diagonal
+        function comprobarDiagonalAbajo(fila, columna, jugador) {
+            var k;
+            var coincidencias = 0;
+            for (var i = fila, k = columna; i < tablero.length && k < tablero[1].length; i++, k++) {
+                // alert(i+" "+k);
+                if (tablero[i][k].innerHTML == jugador) {
+                    coincidencias++;
+                } else {
+                    coincidencias = 0;
+                }
+                if (coincidencias == 4) {
+                    return true;
+                    //document.write("gana jugador");
+                }
+            }
+
+            return false;
+
+        }
+
+        function comprobarDiagonalArriba(fila, columna, jugador) {
+            var k;
+            var coincidencias = 0;
+            for (var i = fila, k = columna; i > 0 && k < tablero[1].length; i--, k++) {
+                // alert(i+" "+k);
+                if (tablero[i][k].innerHTML == jugador) {
+                    coincidencias++;
+                } else {
+                    coincidencias = 0;
+                }
+                if (coincidencias == 4) {
+
+                    return true;
+                    // document.write("gana jugador");
+                }
+            }
+
+            return false;
+
+        }
+
+        //comprobar vertical
+        function comprobarVertical(fila, columna, jugador) {
+            var coincidencias = 0;
+            for (var i = fila; i < tablero.length; i++) {
+                if (tablero[i][columna].innerHTML == jugador) {
+                    coincidencias++;
+                } else {
+                    coincidencias = 0;
+                }
+                if (coincidencias == 4) {
+                    document.write("gana jugador");
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+        function empate() {
+            //    alert();
+            var empate = true;
+            for (var i = 1; i < tablero.length; i++) {
+                for (var j = 1; j < tablero[1].length; j++) {
+
+                    if (tablero[i][j].innerHTML == "") {
+                        empate = false;
+                        //    alert(i+" "+j);
+                    }
+                }
+            }
+            return empate;
+        }
+    </script>
+</body>
+
+</html>

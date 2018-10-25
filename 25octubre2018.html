@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="25octubre2018.css"/>
+</head>
+
+<body>
+    <div id="juan">
+        <div class="pepe">1</div>
+        <div class="pepe" id="prueba">2</div>
+        <div class="pepe">3</div>
+        <div class="pepe">4</div>
+        <div class="pepe">5</div>
+        <div class="pepe">6</div>
+    </div>
+    <script>
+        window.onload=function(){
+            console.log("ini");
+            var j = document.getElementById("juan");
+            var p = j.getElementsByClassName("pepe");
+            for(a of p){
+                a.onclick=ocultar;
+            }
+            console.log("Fin");
+        }
+        var ocultar=function(){
+            this.style.display="none";
+        }
+    </script>
+</body>
+</html>
