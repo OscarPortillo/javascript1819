@@ -1,55 +1,66 @@
-body {
-        padding: 1em 3em;
-        background: white;
-        text-align: center;
-        width: 700px;
-    }
+#tabla {
+    height: 450px;
+    width: 510px;
+}
+.columna {
+    width: 72px;
+    height: 422px;
+    background-color: royalblue;
+    float: left;
+}
+.fila {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    clear: both;
+    background-color: beige;
+    box-shadow: 2px 2px 5px #999;
+}
+.fichaR {
+    text-align: center;
+    background: red;
+    margin: 0px;
+    color: red;
+}
 
-    #tabla {
-        height: 300px;
-    }
+.fichaA {
+    text-align: center;
+    background: yellow;
+    margin: 0px;
+    color: yellow;
+}
 
-    .reset {
-        display: block;
-        width: 150px;
-        clear: both;
-        border:  solid black;
-        
-    }
+.reset {
+    width: 200px;
+    height: 50px;
+    border: solid black;
+}
 
-    .reset,
-    a {
-        text-decoration: none;
-
-    }
-
-    .columna {
-        width: 50px;
-        background-color:royalblue;
-        float: left;
-        align-content: center;
-    }
-
-    .fila {
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        clear: both;
-        background-color: white;       
-
-    }
-
-
-    .ficha_rojo {
-        background: red;
-        margin: 0px;
-        color: red;
-        
-        
-    }
-
-    .ficha_azul {
-        background: blue;
-        margin: 0px;
-        color: blue;
-    }
+.reset,a {
+    text-decoration: none;
+    font-size: 40px;
+    font-family: cursive;
+    font-style: italic;
+    text-decoration-color: black;
+}
+#tabla{/*para mostrarel texto del ganador*/
+    text-align: center;
+    font-family: cursive;
+    font-style: italic;
+    font-size: -webkit-xxx-large;
+    color: slateblue;
+}
+#mensajeFinal{
+    font-size: 70px;
+    background-color: royalblue;
+}
+#contenedorTitulo{
+    padding-left: 140px;
+}
+#nombre{
+    text-align: center;
+    align-content: center;
+    border: dotted black;
+    width: 170px;
+    color: blue;
+}
