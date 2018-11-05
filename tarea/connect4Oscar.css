@@ -2,12 +2,14 @@
     height: 450px;
     width: 510px;
 }
+
 .columna {
     width: 72px;
     height: 422px;
     background-color: royalblue;
     float: left;
 }
+
 .fila {
     border-radius: 50%;
     width: 70px;
@@ -16,6 +18,7 @@
     background-color: beige;
     box-shadow: 2px 2px 5px #999;
 }
+
 .fichaR {
     text-align: center;
     background: red;
@@ -36,28 +39,34 @@
     border: solid black;
 }
 
-.reset,a {
+.reset,
+a {
     text-decoration: none;
     font-size: 40px;
     font-family: cursive;
     font-style: italic;
     text-decoration-color: black;
 }
-#tabla{/*para mostrarel texto del ganador*/
+
+#tabla {
+    /*para mostrarel texto del ganador*/
     text-align: center;
     font-family: cursive;
     font-style: italic;
     font-size: -webkit-xxx-large;
     color: slateblue;
 }
-#mensajeFinal{
+
+#mensajeFinal {
     font-size: 70px;
     background-color: royalblue;
 }
-#contenedorTitulo{
+
+#contenedorTitulo {
     padding-left: 140px;
 }
-#nombre{
+
+#nombre {
     text-align: center;
     align-content: center;
     border: dotted black;

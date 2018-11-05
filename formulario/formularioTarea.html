@@ -1,0 +1,53 @@
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <h1>Formulario</h1>
+    <form>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" />
+        </div>
+        <div>
+            <label for="NIF">NIF:</label>
+            <input type="text" id="NIF" />
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" />
+        </div>
+        <div>
+            <label for="pais">País:</label>
+            <input type="text" id="pais"/>
+        </div>
+        <input type="submit"/>
+    </form>
+    <script>
+        function validarEmail(email){
+            var correo = document.getElementById("email");
+            var validar ="";
+            var correcto = 0;
+            for ( var i = 0 ; i < correo.length ; i++){
+                if( correo.charCodeAt(i) == "@"){
+                    validar+=correo.charCodeAt(i);
+                }
+                if(validar == "hotmail.com"){
+                    correcto = 1 ;
+                } else {
+                    alert("Correo no válido.");
+                }
+                if(validar == "yahoo.es"){
+                    correcto = 1 ;
+                } else {
+                    alert("Correo no válido.");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
