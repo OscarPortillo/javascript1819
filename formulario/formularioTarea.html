@@ -19,34 +19,37 @@
         <div>
             <label for="email">Email:</label>
             <input type="email" id="email" />
+            <span id="valido"></span>
         </div>
         <div>
             <label for="pais">País:</label>
-            <input type="text" id="pais"/>
+            <input type="text" id="pais" />
         </div>
-        <input type="submit"/>
+        <input type="submit" />
     </form>
+
     <script>
-        function validarEmail(email){
-            var correo = document.getElementById("email");
-            var validar ="";
+        document.getElementById('email').addEventListener('input', function() {
             var correcto = 0;
-            for ( var i = 0 ; i < correo.length ; i++){
-                if( correo.charCodeAt(i) == "@"){
-                    validar+=correo.charCodeAt(i);
-                }
-                if(validar == "hotmail.com"){
-                    correcto = 1 ;
-                } else {
-                    alert("Correo no válido.");
-                }
-                if(validar == "yahoo.es"){
-                    correcto = 1 ;
-                } else {
-                    alert("Correo no válido.");
-                }
+            campo = event.target;
+            valido = document.getElementById('valido');
+            var correo = document.getElementById("email").value;
+            //document.write(correo);
+            caracteresValidos = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+            //Se muestra un texto a modo de ejemplo, luego va a ser un icono
+            if (correo.split("@")[1] == "hotmail.com" || correo.split("@")[1] == "yahoo.es") {
+                correcto = 1;
             }
-        }
+            if (correcto == 0) {
+                if (caracteresValidos.test(campo.value)) {
+                    valido.innerText = "válido";
+                }
+            } else {
+                valido.innerText = "incorrecto";
+            }
+
+        });
+
     </script>
 </body>
 
