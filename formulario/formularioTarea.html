@@ -3,52 +3,111 @@
 <head>
     <meta charset="utf-8">
     <title>Formulario</title>
+    <style>
+        .tabla{
+           margin: auto;
+            background-color: #F38A74;
+        }
+        .formulario{
+            text-align: center;
+        }
+        body{
+            background-color: #F8AA99;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Formulario</h1>
-    <form>
-        <div>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" />
-        </div>
-        <div>
-            <label for="NIF">NIF:</label>
-            <input type="text" id="NIF" />
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" />
-            <span id="valido"></span>
-        </div>
-        <div>
-            <label for="pais">País:</label>
-            <input type="text" id="pais" />
-        </div>
-        <input type="submit" />
-    </form>
-
+    <h1 class="formulario">Formulario</h1>
+    <table class="tabla">
+        <form onsubmit="return comprobar();">
+            <tr>
+                <th><label for="nombre">Nombre:</label></th>
+                <th><input type="text" id="nombre" /></th>
+            </tr>
+            <tr>
+                <th><label for="NIF">NIF:</label></th>
+                <th><input type="text" id="NIF" /></th>
+            </tr>
+            <tr>
+                <th><label for="email">Email:</label></th>
+                <th><input type="email" id="email" /></th>
+            </tr>
+            <tr>
+                <th><label for="pais">País:</label></th>
+                <th><input type="text" id="pais" /></th>
+            </tr>
+            <tr>
+                <th colspan="2"><input type="submit" /></th>
+            </tr>
+        </form>
+    </table>
     <script>
-        document.getElementById('email').addEventListener('input', function() {
-            var correcto = 0;
-            campo = event.target;
-            valido = document.getElementById('valido');
-            var correo = document.getElementById("email").value;
-            //document.write(correo);
-            caracteresValidos = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-            //Se muestra un texto a modo de ejemplo, luego va a ser un icono
-            if (correo.split("@")[1] == "hotmail.com" || correo.split("@")[1] == "yahoo.es") {
-                correcto = 1;
-            }
-            if (correcto == 0) {
-                if (caracteresValidos.test(campo.value)) {
-                    valido.innerText = "válido";
-                }
+        function comprobar() {
+            if (comprobarNif() == true) {
+                alert("NIF correcto");
             } else {
-                valido.innerText = "incorrecto";
+                alert("NIF incorrecto");
+            }
+            if (comprobarEmail() == true) {
+                alert("correo correcto");
+            } else {
+                alert("coreo invalido");
+            }
+            if (comprobarPais() == true) {
+                alert("pais correcto");
+            } else {
+                alert("Solo se permite España o Italia");
             }
 
-        });
+
+        } //funcion comprobar
+
+
+        function comprobarEmail() {
+            var correcto = false;
+            var email = document.getElementById("email").value;
+            caracteresValidos = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+            if (email.split("@")[1] == "hotmail.com" || email.split("@")[1] == "yahoo.es" || email.length == 0) {
+                correcto = false;
+                return correcto;
+            } else {
+                correcto = true;
+                return correcto;
+            }
+            /*if (email.length == 0) {
+                correcto = false;
+                return correcto;
+            }*/
+        }
+
+        function comprobarPais() {
+            var correcto = false;
+            var pais = document.getElementById("pais").value;
+            //document.log(pais);
+            if (pais == "España" || pais == "Italia") {
+                correcto = true;
+                return correcto;
+            } else {
+                correcto = false;
+                return correcto;
+            }
+            if (pais.length == 0) {
+                return correcto;
+            }
+        }
+
+        function comprobarNif() {
+            var correcto = false;
+            var dni = document.getElementById("NIF").value;
+            if (!(/^\d{8}[^XMI]$/.test(dni))) {
+                correcto = false;
+                return correcto;
+            } else {
+                correcto = true;
+                return correcto;
+            }
+        }
 
     </script>
 </body>
