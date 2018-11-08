@@ -20,10 +20,10 @@
 <body>
     <h1 class="formulario">Formulario</h1>
     <table class="tabla">
-        <form onsubmit="return comprobar();">
+        <form onsubmit="return comprobar();" method="post" action="formulario.php" name="registro">
             <tr>
                 <th><label for="nombre">Nombre:</label></th>
-                <th><input type="text" id="nombre" /></th>
+                <th><input type="text" name="nombre" id="nombre" /></th>
             </tr>
             <tr>
                 <th><label for="NIF">NIF:</label></th>
@@ -38,29 +38,46 @@
                 <th><input type="text" id="pais" /></th>
             </tr>
             <tr>
-                <th colspan="2"><input type="submit" /></th>
+                <th colspan="2">
+                    <a href="javascript:enviarForm()">Enviar</a>
+                </th>
             </tr>
         </form>
     </table>
     <script>
+        function enviarForm() {
+            if (comprobar == 0) {
+                document.registro.submit();
+            } else {
+                alert("Algo ha fallado");
+            }
+        }
+
         function comprobar() {
+            var correcto = 0;
             if (comprobarNif() == true) {
                 alert("NIF correcto");
             } else {
+                correcto = 1;
                 alert("NIF incorrecto");
             }
             if (comprobarEmail() == true) {
                 alert("correo correcto");
             } else {
+                correcto = 1;
                 alert("coreo invalido");
             }
             if (comprobarPais() == true) {
                 alert("pais correcto");
             } else {
+                correcto = 1;
                 alert("Solo se permite España o Italia");
             }
-
-
+            if (correcto == 0) {
+                return 0;
+            } else {
+                return 1;
+            }
         } //funcion comprobar
 
 
