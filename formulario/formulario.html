@@ -14,13 +14,16 @@
         body{
             background-color: #F8AA99;
         }
+        a{
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
     <h1 class="formulario">Formulario</h1>
     <table class="tabla">
-        <form onsubmit="return comprobar();" method="post" action="formulario.php" name="registro">
+        <form onsubmit="return comprobar();" method="post" action="enviar.html" name="registro">
             <tr>
                 <th><label for="nombre">Nombre:</label></th>
                 <th><input type="text" name="nombre" id="nombre" /></th>
@@ -39,57 +42,56 @@
             </tr>
             <tr>
                 <th colspan="2">
-                    <a href="javascript:enviarForm()">Enviar</a>
+                    <a href="javascript:enviarForm()">Registrarse</a>
                 </th>
             </tr>
         </form>
     </table>
     <script>
         function enviarForm() {
-            if (comprobar == 0) {
+            if (comprobar() == 0) {
                 document.registro.submit();
-            } else {
-                alert("Algo ha fallado");
+            }else {
+                alert("Ups!! Algo anda mal.");
             }
         }
 
         function comprobar() {
             var correcto = 0;
             if (comprobarNif() == true) {
-                alert("NIF correcto");
+                //alert("NIF correcto");
             } else {
                 correcto = 1;
                 alert("NIF incorrecto");
             }
             if (comprobarEmail() == true) {
-                alert("correo correcto");
+                //alert("correo correcto");
             } else {
                 correcto = 1;
-                alert("coreo invalido");
+                alert("coreo incorrecto");
             }
             if (comprobarPais() == true) {
-                alert("pais correcto");
+                //alert("pais correcto");
             } else {
                 correcto = 1;
                 alert("Solo se permite España o Italia");
             }
-            if (correcto == 0) {
-                return 0;
-            } else {
-                return 1;
-            }
+            return correcto;
         } //funcion comprobar
-
-
         function comprobarEmail() {
             var correcto = false;
             var email = document.getElementById("email").value;
             caracteresValidos = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+            if(caracteresValidos.test(email)){
+                alert("valido");
+            }else{
+                alert("hay una cagada ");
+            }
             if (email.split("@")[1] == "hotmail.com" || email.split("@")[1] == "yahoo.es" || email.length == 0) {
                 correcto = false;
                 return correcto;
             } else {
-                correcto = true;
+                correcto = true; 
                 return correcto;
             }
             /*if (email.length == 0) {
@@ -125,7 +127,6 @@
                 return correcto;
             }
         }
-
     </script>
 </body>
 
