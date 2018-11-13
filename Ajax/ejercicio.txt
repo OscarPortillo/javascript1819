@@ -1,0 +1,22 @@
+nombre
+precio
+categorias
+descripcion
+etiquetas
+(ID)
+
+
+cupcake
+1$
+dulces, especiales
+cupcake muy  rico
+ cafe,desayuno , mañana
+
+
+
+
+
+nube de etiquetas
+
+
+
