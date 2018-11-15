@@ -1,47 +1,47 @@
 {
- "cupcakes" : [
-   {
-     "ID" : "c1",
-     "ruta" : "./img/cupcake1.jpg",
-    "nombre": "Cupcake de café",
-    "precio": 1,
-    "categorias":[
+    "cupcakes": [
+        {
+            "ID": "c1",
+            "ruta": "./cup3.jpg",
+            "nombre": "Cupcake de café",
+            "precio": 1,
+            "categorias": [
       "dulces", "salados"
     ],
-    "descripcion": "Un cupcake delicioso",
-     "etiquetas": [
+            "descripcion": "Un cupcake delicioso",
+            "etiquetas": [
        "café", "desayuno"
      ]
    },
-   {
-     "ID" : "c2",
-     "ruta" : "./img/cupcake1.jpg",
-    "nombre": "cupcake 2",
-    "precio": 1,
-    "categorias":[
+        {
+            "ID": "c2",
+            "ruta": "./cup3.jpg",
+            "nombre": "cupcake 2",
+            "precio": 1,
+            "categorias": [
       "dulces", "salados"
     ],
-    "descripcion": "Un cupcake delicioso",
-     "etiquetas": [
+            "descripcion": "Un cupcake delicioso",
+            "etiquetas": [
        "café", "desayuno"
      ]
    },
-   {
-     "ID" : "c3",
-     "ruta" : "./img/cupcake1.jpg",
-    "nombre": "c3 3 3 3 3",
-    "precio": 1,
-    "categorias":[
+        {
+            "ID": "c3",
+            "ruta": "./cup3.jpg",
+            "nombre": "c3 3 3 3 3",
+            "precio": 1,
+            "categorias": [
       "dulces", "salados"
     ],
-    "descripcion": "Un cupcake delicioso",
-     "etiquetas": [
+            "descripcion": "Un cupcake delicioso",
+            "etiquetas": [
        "café", "desayuno"
      ]
    }
-   
-   
-   
- ] 
-  
+
+
+
+ ]
+
 }
