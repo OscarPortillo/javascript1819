@@ -3,20 +3,13 @@ window.onload = function () {
 }
 
 function cargarAjax() {
-    // alert("Arranque");
     let http = new XMLHttpRequest();
     http.onreadystatechange = mostrar;
     http.open("GET", "./cupcakes.json", true);
     http.send();
 
     function mostrar() {
-        //console.log("Estamnos en mostrar");
-        //console.log(http.readyState);
-        //console.log(http.status);
-
         if (http.readyState == 4 && http.status == 200) {
-            //console.log("Recibimos datos de ajax");
-            //console.log(http.responseText);
             var obj = JSON.parse(this.responseText);
             verDatos(obj);
             verCategorias(obj);
@@ -34,10 +27,13 @@ function verDatos(objeto) {
         var id = document.createElement("h3");
         div.append(id);
         id.innerHTML +=objeto.cupcakes[i].ID;
-        //div.innerHTML += objeto.cupcakes[i].ID + "<br>";
         div.append(img);
-        div.innerHTML += objeto.cupcakes[i].nombre + "<br>" +
-            objeto.cupcakes[i].precio + "€<br>";
+        var nombre = document.createElement("p");
+        div.append(nombre);
+        nombre.innerHTML += objeto.cupcakes[i].nombre;
+        var precio = document.createElement("p");
+        div.append(precio);
+        precio.innerHTML+= objeto.cupcakes[i].precio + "€<br>";
             var ul = document.createElement("ul");
         for (let j = 0; j < objeto.cupcakes[i].categorias.length; j++) { /*para recorrer las etiquetas*/
             var li = document.createElement("li")
