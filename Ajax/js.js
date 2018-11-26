@@ -52,7 +52,7 @@ function verCategorias(objeto)
         for(let j = 0 ; j < objeto.cupcakes[i].categorias.length ; j++){
             let eti = document.getElementById("etiquetas");
             var etiqueta = [objeto.cupcakes[i].categorias[j]];
-            eti.innerHTML = mapaEtiqueta.map(etiqueta);            
+            eti.innerHTML += etiqueta+"<br>";
         }
     }
 }

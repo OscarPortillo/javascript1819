@@ -1,0 +1,38 @@
+nombre
+precio
+categorias
+descripcion
+etiquetas
+(ID)
+
+
+cupcake
+1$
+dulces, especiales
+cupcake muy  rico
+ cafe,desayuno , mañana
+
+
+
+
+
+nube de etiquetas
+
+
+
+for (let i = 0; i < obj.cupcakes.length ; i++) {
+               document.getElementById("cupcake"+""+i).innerHTML += obj.cupcakes[i].ID +
+                    "<br>"
+                +obj.cupcakes[i].nombre+"<br>"
+                +obj.cupcakes[i].precio+"<br>";
+                for(let j = 0 ; j < obj.cupcakes[i].categorias.length; j++){/*para recorrer las etiquetas*/
+                    document.getElementById("cupcake"+""+i).innerHTML+= obj.cupcakes[i].categorias[j]+"<br> ";
+                }
+                 document.getElementById("cupcake"+""+i).innerHTML+= obj.cupcakes[i].descripcion;
+                
+                let ruta = obj.cupcakes[i].ruta;
+                var div = document.getElementById("cupcake"+i);
+                var img = document.createElement("img");
+                img.src=ruta;
+                div.append(img);
+            }
