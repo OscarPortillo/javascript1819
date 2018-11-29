@@ -4,7 +4,7 @@
             "ID": "c1",
             "ruta": "./cup3.jpg",
             "nombre": "Cupcake de café",
-            "precio": 1,
+            "precio": 2,
             "categorias": [
       "dulces", "salados"
     ],
@@ -39,9 +39,6 @@
        "café", "desayuno"
      ]
    }
-
-
-
  ]
 
 }

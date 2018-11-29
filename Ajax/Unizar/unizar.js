@@ -46,7 +46,7 @@ function cargarAjax() {
 
             let r = http.responseText;
             obj = JSON.parse(r);
-           // console.log(obj.datos);
+            // console.log(obj.datos);
             mostrarDatos();
             cargarSelect(obj);
         } //if
@@ -56,12 +56,12 @@ function cargarAjax() {
 
 function cargarSelect(objeto) {
     //let select = document.getElementById("Localidad");
-    var arraySelects = ["Localidad","MediaGuadruados","TipoEgreso","Traslados",
-    "FechaAtualidad","TipoEstudio","Estudio","Sexo","AluGraduados","CursoAca","Tasa"
-    ,"AluInter","AluInterAño"];
-    var arraySelectsFiltrados = ["filtLocalidad","filtMediaGuadruados","filtTipoEgreso","filtTraslados",
-    "filtFechaAtualidad","filtTipoEstudio","filtEstudio","filtSexo","filtAluGraduados","filtCursoAca","filtTasa"
-    ,"filtAluInter","filtAluInterAño"];
+    var arraySelects = ["Localidad", "MediaGuadruados", "TipoEgreso", "Traslados",
+    "FechaAtualidad", "TipoEstudio", "Estudio", "Sexo", "AluGraduados", "CursoAca", "Tasa"
+    , "AluInter", "AluInterAño"];
+    var arraySelectsFiltrados = ["filtLocalidad", "filtMediaGuadruados", "filtTipoEgreso", "filtTraslados",
+    "filtFechaAtualidad", "filtTipoEstudio", "filtEstudio", "filtSexo", "filtAluGraduados", "filtCursoAca", "filtTasa"
+    , "filtAluInter", "filtAluInterAño"];
     //luego hacer uno igual pero donde me tengo que copiar los que se repiten osea 
     // el filtrado
     /*for (let datos of objeto.datos) {
@@ -74,24 +74,36 @@ function cargarSelect(objeto) {
         select.append(option);
         option.innerHTML += localidadFiltrado[i];
     }*/
-    var dato_o=["LOCALIDAD", "DURACION_MEDIA_GRADUADOS", "TIPO_EGRESO",
-    "ALUMNOS_TRASLADAN_OTRA_UNIV","FECHA_ACTUALIZACION", "TIPO_ESTUDIO",
-    "ESTUDIO", "SEXO","ALUMNOS_GRADUADOS", "CURSO_ACADEMICO", "TASA_EFICIENCIA",
+    var dato_o = ["LOCALIDAD", "DURACION_MEDIA_GRADUADOS", "TIPO_EGRESO",
+    "ALUMNOS_TRASLADAN_OTRA_UNIV", "FECHA_ACTUALIZACION", "TIPO_ESTUDIO",
+    "ESTUDIO", "SEXO", "ALUMNOS_GRADUADOS", "CURSO_ACADEMICO", "TASA_EFICIENCIA",
     "ALUMNOS_INTERRUMPEN_ESTUDIOS", "ALUMNOS_INTERRUMPEN_EST_ANO1"];
 
     var arraySinFiltrar = [];
     var arrayFiltrado = [];
-    var arr = [];
+    var arrLocalidad = [];
 
-   for(let i = 0; i < dato_o.length; i++){
-        arr.push(objeto[dato_o[i]]);
-   }
-   for(let arrayALu of arr){
-    console.log(arrayALu);
-   }
 
-}//cargar selects
 
+    for (let i = 0; i < objeto.datos.length; i++) {
+
+        for (let j = 0; j < dato_o.length; j++) {
+            arrLocalidad.push(objeto.datos[i][dato_o[j]]); //con el punto no se lo toma como variable
+
+
+        }
+
+    }
+
+
+    for (let arrayALu of arrLocalidad) {
+        console.log(arrayALu);
+    }
+
+
+} //cargar selects
+
+//https://unsplash.com/search/photos/bed
 
 /* for of recorre el array y for in recorre objetos*/
 //pues tendré que hacer un array de arrays y meter las propìedades dentro del array como array
