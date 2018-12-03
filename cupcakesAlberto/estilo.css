@@ -1,0 +1,64 @@
+body, html {
+  height: 100%;
+  width: 100%;
+}
+div#contenedor{
+  margin: auto;
+  width: 1100px;
+  height: 2000px;
+  background-color: cyan;
+}
+div#etiquetas{
+  background-color: yellow;
+  float: right;
+  width: 280px;
+  min-height: 100%;
+  padding: 5px;
+  text-align: center;
+}
+div.cupcake {
+  background-color: pink;
+  width: 260px;
+  height: 500px;
+  float: left;
+  margin: 3px;
+  overflow: hidden;
+}
+#cabecera {
+  background: #333;
+  color: white;
+  height: 90px;
+} 
+
+#cabecera h1 {
+  color: white;
+}
+.name{
+  color: blue;
+  text-align: center;
+}
+.price{
+  color: green;
+  text-align:center;
+}
+.id{
+  color: grey;
+  text-align:center;
+}
+
+p{
+  color: red;
+  align-items: center;
+}
+
+.poco{
+  font-size: 10px;
+}
+
+.medio{
+  font-size: 20px;
+}
+
+.mucho{
+  font-size: 30px;
+}

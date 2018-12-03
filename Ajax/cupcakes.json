@@ -17,7 +17,7 @@
             "ID": "c2",
             "ruta": "./cup3.jpg",
             "nombre": "cupcake 2",
-            "precio": 1,
+            "precio": 5,
             "categorias": [
       "dulces", "salados"
     ],
@@ -43,7 +43,7 @@
             "ID": "c4",
             "ruta": "./cup3.jpg",
             "nombre": "c4 4 4 4 4",
-            "precio": 1,
+            "precio": 9,
             "categorias": [
       "dulces", "salados","amargo"
     ],

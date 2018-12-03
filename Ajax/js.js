@@ -1,5 +1,6 @@
 var objetoCupcakes;
 
+
 window.onload = function () {
     cargarAjax();
 }
@@ -20,57 +21,72 @@ function cargarAjax() {
         if (http.readyState == 4 && http.status == 200) {
             let datosCupcke = http.responseText;
             objetoCupcakes = JSON.parse(datosCupcke);
-            verDatos(objetoCupcakes);
-            verCategorias(objetoCupcakes);
-            mostrarCategoria(objetoCupcakes);
-            ordenarPrecioDescendente(objetoCupcakes);
+            verDatos();
+            verCategorias();
+            mostrarCategoria();
         }
-        console.log("Salimos de mostrar");
+        //console.log("Salimos de mostrar");
     }
 }
 
-function verDatos(objeto) {
-    for (let i = 0; i < objeto.cupcakes.length; i++) {
-        let ruta = objeto.cupcakes[i].ruta;
-        var img = document.createElement("img");
-        img.src = ruta;
-        var div = document.getElementById("cupcake" + i);
-        var id = document.createElement("h3");
-        div.append(id);
-        id.innerHTML += objeto.cupcakes[i].ID;
-        div.append(img);
-        var nombre = document.createElement("p");
-        div.append(nombre);
-        nombre.innerHTML += objeto.cupcakes[i].nombre;
-        var precio = document.createElement("p");
-        div.append(precio);
-        precio.innerHTML += objeto.cupcakes[i].precio + "€<br>";
-        var ul = document.createElement("ul");
-        for (let j = 0; j < objeto.cupcakes[i].categorias.length; j++) { /*para recorrer las etiquetas*/
-            var li = document.createElement("li")
-            div.append(ul);
-            li.innerHTML += objeto.cupcakes[i].categorias[j];
-            ul.append(li);
-        }
-        div.innerHTML += objeto.cupcakes[i].descripcion;
+function verDatos() {
+    //console.log(objetoCupcakes);
+    var contenedor = document.getElementById("contenedor");
+    for (let cupCake of objetoCupcakes.cupcakes) {
+        let divCupcake = document.createElement("div");
+        divCupcake.className = "cupcake";
+        contenedor.append(divCupcake);
+        /*id CUPCAKE*/
+        var idCupcake = document.createElement("h4");
+        idCupcake.className="idCupcake";
+        divCupcake.append(idCupcake);
+        var id=document.createTextNode(cupCake.ID);
+        idCupcake.append(id);
+        /*id CUPCAKE*/
+
+        /*IMAGEN */
+        var imagen = document.createElement("img");
+        //console.log(cupCake.ruta);
+        imagen.setAttribute("src", cupCake.ruta);
+        divCupcake.append(imagen);
+        /*IMAGEN */
+        /*NOMBRE DEL CUPCAKE*/
+        var nombreCupcake = document.createElement("h4");
+        nombreCupcake.className = "nombre";
+        divCupcake.append(nombreCupcake);
+        //console.log(cupCake.nombre);
+        var nombre = document.createTextNode(cupCake.nombre);
+        nombreCupcake.append(nombre);
+        /*NOMBRE DEL CUPCAKE*/
+        /* PRECIO*/
+        
+        
+        /*PRECIO*/
+
     }
+    document.getElementById("sortDdescendent").onclick = function () {
+        ordenarAbajo()
+    };
+    document.getElementById("sortAscendente").onclick = function () {
+        ordenarArriba()
+    };
 }
 
-function verCategorias(objeto) {
-    for (let i = 0; i < objeto.cupcakes.length; i++) {
-        for (let j = 0; j < objeto.cupcakes[i].etiquetas.length; j++) {
+function verCategorias() {
+    for (let i = 0; i < objetoCupcakes.cupcakes.length; i++) {
+        for (let j = 0; j < objetoCupcakes.cupcakes[i].etiquetas.length; j++) {
             let eti = document.getElementById("etiquetas");
-            var etiqueta = [objeto.cupcakes[i].etiquetas[j]];
+            var etiqueta = [objetoCupcakes.cupcakes[i].etiquetas[j]];
             eti.innerHTML += etiqueta + "<br>";
         }
     }
 } //ver categorías
-function mostrarCategoria(objeto) {
+function mostrarCategoria() {
     var arraYCategorias = [];
     var arraYCategoriasFiltrado = [];
-    for (let i = 0; i < objeto.cupcakes.length; i++) {
-        for (let j = 0; j < objeto.cupcakes[i].categorias.length; j++) {
-            arraYCategorias.push(objeto.cupcakes[i].categorias[j]);
+    for (let i = 0; i < objetoCupcakes.cupcakes.length; i++) {
+        for (let j = 0; j < objetoCupcakes.cupcakes[i].categorias.length; j++) {
+            arraYCategorias.push(objetoCupcakes.cupcakes[i].categorias[j]);
             arraYCategoriasFiltrado = arraYCategorias.unique();
         }
     }
@@ -82,26 +98,12 @@ function mostrarCategoria(objeto) {
     }
 } //mostrarCategoria
 
-function descendent() {
-    console.log("Hola mundo");
-    //ordenarPrecioDescendente(objetoCupcakes);
-    
-    OrdenarPorIdAscendente(objetoCupcakes);
-}
-
-function ordenarPrecioDescendente(objeto) {
-    var arrayPrecios;
-    for (let i = 0; i < objeto.cupcakes.length; i++) {
-        //console.log(objeto.cupcakes[i].precio);
-        arrayPrecios = objeto.cupcakes[i].precio;
-    }
-}
-function OrdenarPorIdAscendente(objetoCupcakes) {
-    for(let cupcake of objetoCupcakes.cupcakes){
-        return ( (cupcake.precio == cupcake.precio)? 0 : (cupcake.precio > cupcake.precio));
-    }
-	
-
+function ordenarAbajo() {
+    objetoCupcakes.cupcakes.sort((a, b) => Number(b.precio) - (a.precio));
+    document.getElementById("contenedor").innerHTML = '';
+    verDatos();
+    verCategorias();
+    mostrarCategoria();
 }
 /*apuntes clase
 ejemploc.addEventListener("click",function(){
