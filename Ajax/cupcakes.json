@@ -38,6 +38,19 @@
             "etiquetas": [
        "café", "desayuno"
      ]
+   },
+        {
+            "ID": "c4",
+            "ruta": "./cup3.jpg",
+            "nombre": "c4 4 4 4 4",
+            "precio": 1,
+            "categorias": [
+      "dulces", "salados","amargo"
+    ],
+            "descripcion": "Un cupcake amargo",
+            "etiquetas": [
+       "café", "desayuno"
+     ]
    }
  ]
 
