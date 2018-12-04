@@ -109,9 +109,10 @@ function verCategorias() {
         }
     }
     for (let etiqueta of arrayCategoriaFiltrado) {
-        var cat = document.createElement("option");
-        categorias.append(cat);
-        cat.append(document.createTextNode(etiqueta));
+        var option = document.createElement("option");
+        option.className="btn";
+        categorias.append(option);
+        option.append(document.createTextNode(etiqueta));
     }
 }
 
@@ -130,4 +131,8 @@ function mostrarEtiquetas() {
         etiquetas.append(cat);
         cat.append(document.createTextNode(etiqueta));
     }
+}
+function mostrarPorEtiqueta()
+{
+    
 }
