@@ -23,7 +23,7 @@ function cargarAjax() {
             objetoCupcakes = JSON.parse(datosCupcke);
             verDatos();
             verCategorias();
-            mostrarCategoria();
+            mostrarEtiquetas();
         }
         //console.log("Salimos de mostrar");
     }
@@ -38,9 +38,9 @@ function verDatos() {
         contenedor.append(divCupcake);
         /*id CUPCAKE*/
         var idCupcake = document.createElement("h4");
-        idCupcake.className="idCupcake";
+        idCupcake.className = "idCupcake";
         divCupcake.append(idCupcake);
-        var id=document.createTextNode(cupCake.ID);
+        var id = document.createTextNode(cupCake.ID);
         idCupcake.append(id);
         /*id CUPCAKE*/
 
@@ -59,56 +59,75 @@ function verDatos() {
         nombreCupcake.append(nombre);
         /*NOMBRE DEL CUPCAKE*/
         /* PRECIO*/
-        
-        
+        var precioCupcake = document.createElement("h4");
+        precioCupcake.className = "precio";
+        divCupcake.append(precioCupcake);
+        var precio = document.createTextNode(cupCake.precio + " €");
+        precioCupcake.append(precio);
+
         /*PRECIO*/
+        /*CATEGORIAS*/
+        var lista = document.createElement("ul");
+        for (let categoria of cupCake.categorias) {
+            var li = document.createElement("li");
+            li.append(document.createTextNode(categoria));
+            lista.append(li);
+        }
+        divCupcake.append(lista);
+        /*CATEGORIAS*/
 
     }
-    document.getElementById("sortDdescendent").onclick = function () {
-        ordenarAbajo()
+    document.getElementById("sortDescendent").onclick = function () {
+        sortDescendent()
     };
     document.getElementById("sortAscendente").onclick = function () {
-        ordenarArriba()
+        sortAscendente()
     };
+}
+
+function sortAscendente() {
+    //console.log("ordenando");
+    objetoCupcakes.cupcakes.sort((a, b) => Number(b.precio) - Number(a.precio));
+    document.getElementById("contenedor").innerHTML = '';
+    verDatos();
+}
+
+function sortDescendent() {
+    objetoCupcakes.cupcakes.sort((a, b) => Number(a.precio) - Number(b.precio));
+    document.getElementById("contenedor").innerHTML = '';
+    verDatos();
 }
 
 function verCategorias() {
-    for (let i = 0; i < objetoCupcakes.cupcakes.length; i++) {
-        for (let j = 0; j < objetoCupcakes.cupcakes[i].etiquetas.length; j++) {
-            let eti = document.getElementById("etiquetas");
-            var etiqueta = [objetoCupcakes.cupcakes[i].etiquetas[j]];
-            eti.innerHTML += etiqueta + "<br>";
+    var categorias = document.getElementById("categorias");
+    var arrayCategorias = [];
+    var arrayCategoriaFiltrado = [];
+    for (let cupcake of objetoCupcakes.cupcakes) {
+        for (eti of cupcake.categorias) {
+            arrayCategorias.push(eti);
+            arrayCategoriaFiltrado = arrayCategorias.unique();
         }
     }
-} //ver categorías
-function mostrarCategoria() {
-    var arraYCategorias = [];
-    var arraYCategoriasFiltrado = [];
-    for (let i = 0; i < objetoCupcakes.cupcakes.length; i++) {
-        for (let j = 0; j < objetoCupcakes.cupcakes[i].categorias.length; j++) {
-            arraYCategorias.push(objetoCupcakes.cupcakes[i].categorias[j]);
-            arraYCategoriasFiltrado = arraYCategorias.unique();
-        }
+    for (let etiqueta of arrayCategoriaFiltrado) {
+        var cat = document.createElement("option");
+        categorias.append(cat);
+        cat.append(document.createTextNode(etiqueta));
     }
-    for (let categoria of arraYCategoriasFiltrado) {
-        let select = document.getElementById("mostrarCategoria");
-        let option = document.createElement("option");
-        select.append(option);
-        option.innerHTML += categoria;
-    }
-} //mostrarCategoria
-
-function ordenarAbajo() {
-    objetoCupcakes.cupcakes.sort((a, b) => Number(b.precio) - (a.precio));
-    document.getElementById("contenedor").innerHTML = '';
-    verDatos();
-    verCategorias();
-    mostrarCategoria();
 }
-/*apuntes clase
-ejemploc.addEventListener("click",function(){
-    vender(parametro){
-        
+
+function mostrarEtiquetas() {
+    var etiquetas = document.getElementById("etiquetas");
+    var arrayEti = [];
+    var arrayEtiFiltrado = [];
+    for (let cupcake of objetoCupcakes.cupcakes) {
+        for (eti of cupcake.etiquetas) {
+            arrayEti.push(eti);
+            arrayEtiFiltrado = arrayEti.unique();
+        }
     }
-},true);
-*/
+    for (let etiqueta of arrayEtiFiltrado) {
+        var cat = document.createElement("div");
+        etiquetas.append(cat);
+        cat.append(document.createTextNode(etiqueta));
+    }
+}

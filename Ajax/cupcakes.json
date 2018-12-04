@@ -3,14 +3,14 @@
         {
             "ID": "c1",
             "ruta": "./cup3.jpg",
-            "nombre": "Cupcake de café",
+            "nombre": "Cupcake 1",
             "precio": 2,
             "categorias": [
       "dulces", "salados"
     ],
             "descripcion": "Un cupcake delicioso",
             "etiquetas": [
-       "café", "desayuno"
+       "café", "desayuno","almuerzo"
      ]
    },
         {
@@ -29,7 +29,7 @@
         {
             "ID": "c3",
             "ruta": "./cup3.jpg",
-            "nombre": "c3 3 3 3 3",
+            "nombre": "Cupcake 3",
             "precio": 1,
             "categorias": [
       "dulces", "salados"
@@ -42,7 +42,7 @@
         {
             "ID": "c4",
             "ruta": "./cup3.jpg",
-            "nombre": "c4 4 4 4 4",
+            "nombre": "Cupcake 4",
             "precio": 9,
             "categorias": [
       "dulces", "salados","amargo"

@@ -8,7 +8,7 @@ div#contenedor{
   height: 2000px;
 }
 div#etiquetas{
-  background-color: yellow;
+    background-color: coral;
   float: right;
   width: 280px;
   min-height: 100%;
