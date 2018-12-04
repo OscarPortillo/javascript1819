@@ -24,6 +24,7 @@ function cargarAjax() {
             verDatos();
             verCategorias();
             mostrarEtiquetas();
+            mostrarPorEtiqueta();
         }
         //console.log("Salimos de mostrar");
     }
@@ -110,7 +111,7 @@ function verCategorias() {
     }
     for (let etiqueta of arrayCategoriaFiltrado) {
         var option = document.createElement("option");
-        option.className="btn";
+        option.className = "btn";
         categorias.append(option);
         option.append(document.createTextNode(etiqueta));
     }
@@ -132,7 +133,17 @@ function mostrarEtiquetas() {
         cat.append(document.createTextNode(etiqueta));
     }
 }
-function mostrarPorEtiqueta()
-{
-    
+
+function mostrarPorEtiqueta() {
+    var select = document.getElementById('categorias');
+    select.addEventListener('change',
+        function () {
+            var selectedOption = this.options[select.selectedIndex];
+            console.log(selectedOption.value);
+            var arrayFiltrado = objetoCupcakes.cupcakes.filter(a => a.categorias.includes(selectedOption.value));
+        });
+
+
 }
+
+/*https://es.stackoverflow.com/questions/175773/c%C3%B3mo-filtrar-un-objeto-json-complejo-usando-filter*/
