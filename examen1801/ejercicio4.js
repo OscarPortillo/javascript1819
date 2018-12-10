@@ -10,26 +10,19 @@ window.onload = function () {
 
 ]
 
-    var c = document.getElementById('container')
-
-    var cadena = "<ul>"
-
+    var c = document.getElementById('container');
+    var cadena = "<ul>";
     for (let v of V) {
-
         cadena += "<li id='" + v + "'>www." + v + ".com</li>";
-
     }
-
-    cadena += "</ul>"
-
+    cadena += "</ul>";
     c.innerHTML = cadena;
-
-    crearEnlaces(V)
+    crearEnlaces(V);
 
 }
 
 function crearEnlaces(V) {
-    document.getElementById("google").onclick = function () {
+    /*document.getElementById("google").onclick = function () {
         google()
     };
     document.getElementById("hotmail").onclick = function () {
@@ -40,7 +33,8 @@ function crearEnlaces(V) {
     };
     document.getElementById("unizar").onclick = function () {
         unizar()
-    };
+    };*/
+    
 
 
 }
