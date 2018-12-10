@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        var numeros = '10+3+4+1';
+        var numArr = [];
+        var numOrd ='';
+        console.log(numeros)
+        numArr = numeros.split("+");
+        numArr.sort(function(a, b) {
+            return a - b
+        });
+        for(num of numArr)numOrd+=num+"+";
+        console.log(numOrd)
+    </script>
+
+</body>
+
+</html>

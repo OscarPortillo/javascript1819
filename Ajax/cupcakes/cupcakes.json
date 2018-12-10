@@ -2,7 +2,7 @@
     "cupcakes": [
         {
             "ID": "c1",
-            "ruta": "./cup3.jpg",
+            "ruta": "./cup1.jpg",
             "nombre": "Cupcake 1",
             "precio": 2,
             "categorias": [
@@ -15,7 +15,7 @@
    },
         {
             "ID": "c2",
-            "ruta": "./cup3.jpg",
+            "ruta": "./cup2.jpg",
             "nombre": "cupcake 2",
             "precio": 5,
             "categorias": [
@@ -23,7 +23,7 @@
     ],
             "descripcion": "Un cupcake delicioso",
             "etiquetas": [
-       "café", "desayuno"
+       "café", "desayuno","mermelada"
      ]
    },
         {
@@ -32,16 +32,16 @@
             "nombre": "Cupcake 3",
             "precio": 1,
             "categorias": [
-      "dulces", "salados"
+      "dulces","berrako"
     ],
             "descripcion": "Un cupcake delicioso",
             "etiquetas": [
-       "café", "desayuno"
+       "café", "desayuno","Merienda"
      ]
    },
         {
             "ID": "c4",
-            "ruta": "./cup3.jpg",
+            "ruta": "./cup4.jpg",
             "nombre": "Cupcake 4",
             "precio": 9,
             "categorias": [
@@ -49,7 +49,7 @@
     ],
             "descripcion": "Un cupcake amargo",
             "etiquetas": [
-       "café", "desayuno"
+       "café","cena"
      ]
    }
  ]
