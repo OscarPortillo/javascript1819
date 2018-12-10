@@ -68,19 +68,19 @@ function mostraMAcroarea() {
     }
 }
 
-function verCompeticiones() {
-    var arrayCompe = [];
-    var arrayCompeFilt = [];
-    for (competiciones of objeto.datos) {
-        for (competicion of competiciones.competiciones) {
-            arrayCompe.push(competicion);
-            arrayCompeFilt = arrayCompe.unique();
+function verMacroareasFiltradas() {
+    var arrayMAcro = [];
+    var arrayMacroFilt = [];
+    for (area of objeto.datos) {
+        for (area of competiciones.competiciones) {
+            arrayMAcro.push(area);
+            arrayMacroFilt = arrayMAcro.unique();
         }
     }
     var select = document.getElementById("opciones");
-    for (compe of arrayCompeFilt) {
+    for (macro of arrayMacroFilt) {
         var option = document.createElement("option");
         select.append(option);
-        option.innerHTML = compe;
+        option.innerHTML = macro;
     }
 }
