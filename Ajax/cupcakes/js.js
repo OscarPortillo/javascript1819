@@ -35,9 +35,8 @@ function cargarAjax() {
 function verDatos() {
     //console.log(objetoCupcakes);
     cargarDatosCupcake();
-    document.getElementById("sortDescendent").onclick = function () {
-        sortDescendent()
-    };
+    document.getElementById("sortDescendent").onclick =sortDescendent()
+    ;
     document.getElementById("sortAscendente").onclick = function () {
         sortAscendente()
     };
