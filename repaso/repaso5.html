@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h1>Dada una cadena muestra tan solo las minúsculas</h1>
+    
+    <script>
+        
+        mostrarMinus();
+        function mostrarMinus() {
+            var cadena = "HoLa MUsJScJOEaPDSKSLr";
+            document.write(cadena);
+            letrasMinusculas= cadena.split('');
+            minusculas =  letrasMinusculas.filter(x=>x.toUpperCase)
+            document.write("<br>"+minusculas)
+        }
+
+    </script>
+</body>
+
+</html>

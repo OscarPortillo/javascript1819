@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h1>Complemento a 1</h1>
+    <script>
+        complementarAUno()
+        function complementarAUno(){
+            var numero = 100545;
+            var binario = numero.toString(2);
+            document.write(binario.split(''))
+            numeroBinario = binario.split('')
+            var comple = numeroBinario.map(x=>+x?0:1)
+            document.write("<br>"+comple)
+        }
+    </script>
+    
+</body>
+</html>
