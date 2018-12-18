@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +11,37 @@
     <h1>Complemento a 1</h1>
     <script>
         complementarAUno()
-        function complementarAUno(){
-            var numero = 5;
-            var binario = numero.toString(2);//para pasar a binario
-            document.write(binario.split(''))
+
+        function complementarAUno() {
+            var numero = 6;
+            var binario = numero.toString(2); //para pasar a binario
+            document.write("nuemro " + numero + " en binario: " + binario.split(''))
             numeroBinario = binario.split('')
+
+
+            document.write("<br>Suma:<br>")
+            suma = numeroBinario.reduce((num, y) => parseInt(num) + parseInt(y))
+            document.write(suma)
+
+            /*
+            document.write("<br> el numero "+numero+" complemento a 1: ")
             var comple = numeroBinario.map(x=>+x?0:1)
             document.write("<br>"+comple)
-            var comple = numeroBinario.map(x=>x=='0'?1:0)
-            document.write("<br>"+comple)
+            */
+
+            document.write("<br> el numero " + numero + " complemento a 1: ")
+            var comple = numeroBinario.map(x => x == '0' ? 1 : 0)
+            document.write("<br>" + comple)
             console.log(comple)
-            
+
+
+            document.write("<br>Suma:<br>")
+            suma = comple.reduce((num, y) => num + y)
+            document.write(suma)
         }
+
     </script>
-    
+
 </body>
+
 </html>
