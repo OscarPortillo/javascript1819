@@ -14,10 +14,10 @@
         
         mostrarMinus();
         function mostrarMinus() {
-            var cadena = "HoLa MUsJScJOEaPDSKSLr";
+            var cadena = "HoMUsJScJOEaPDSKSLr";
             document.write(cadena);
             letrasMinusculas= cadena.split('');
-            minusculas =  letrasMinusculas.filter(x=>x.toUpperCase)
+            minusculas =  letrasMinusculas.filter(x=>x==x.toLowerCase())
             document.write("<br>"+minusculas)
         }
 

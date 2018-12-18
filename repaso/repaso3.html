@@ -7,14 +7,18 @@
 </head>
 
 <body>
+    <h1>Dado un array de enteros muestra por consola, el número y su índice en el array</h1>
     <script>
         posicion();
         function posicion (){
             var nums = [1,2,5,4,8,9,78,35];
             console.log(nums)
-            solucion = nums.map((variable, posicion)=>(variable+' - '+posicion))
-            
-            console.log(solucion)
+            solucion = nums.map((variable, posicion)=>(posicion+'  -  '+variable))
+            for( num of solucion){
+                document.write("posicion "+num+" numero<br>");
+                console.log(num)
+            }
+            //document.write(solucion)
         }
     </script>
     
