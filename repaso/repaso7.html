@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <h1>Máscara de de una IP</h1>
+    
+    <script>
+    mascara();
+        function mascara(){
+            var ip  = "192.168.2.1/24";
+            var ip1= ip.split(".");
+            var lng = ip1[ip1.length-1];
+            var long =lng.split("/"); 
+            console.log(ip1)
+            console.log(long);
+            ip1[3] =long[0];
+            console.log(ip1)
+            var mask = long[long.length-1]
+            console.log(mask)
+        }
+    </script>
+</body>
+</html>
