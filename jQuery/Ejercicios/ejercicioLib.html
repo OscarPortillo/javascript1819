@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../lib/jquery-3.3.1.min.js">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+    <script>
+        (function ($){
+        $(document).ready(function(){//ready es equivalente al window.onload
+                $('#boton1').click(function(){
+                    $('#p1').html("Prueba de jQuery probando 08/01/2018");
+                });
+            })
+        })(jQuery);
+       
+        
+        /*$(document).ready(function(){
+                $('#boton1').click(function(){
+                    $('#p1').html("Prueba de jQuery probando 08/01/2019");
+                });
+            });*/
+        </script>
+</head>
+
+<body>
+
+    <input type="button" value="prueba jQuery" id="boton1">
+    <p>Al pulsar el boton se mostrará debajo el texto "Prueba de jQuery"</p>
+    <p id="p1">Texto que se cambiará</p>
+</body>
+
+</html>

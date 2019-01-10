@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="author" content="javier soriano">
+        <title>jQuery - rendimiento</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h2>Abra la consola del navegador para ver la ejecución del código.</h2>
+        <p class="clasebar" id="p1">Párrafo 1 perteneciente a la clase: <em>clasebar.</em></p>
+        <p class="clasebar" id="p2">Párrafo 2 perteneciente a la clase: clasebar.</p>
+        <p class="clasebar" id="p3">Párrafo 3 perteneciente a la clase: clasebar.</p>
+        <p class="clasebar" id="p4">Párrafo 4 perteneciente a la clase: clasebar.</p>
+        <p class="clasebar" id="p5">Párrafo 5 perteneciente a la clase: clasebar.</p>
+        <label>Número de repeticiones: <input type="number" min="10" id="repeticiones" value="100"></label>
+        <input type="button" id="btn1" value="Lanzar">
+        <p>Tiempo con jQuery <span id="res1"></span><span></p>
+        <p>Tiempo con VanillaJS <span id="res2"></span><span></p>
+        <script>
+            function darTiempo(inicio,final,p){
+                var tiempo = (toMilisegundos(final))- (toMilisegundos(inicio));
+                var par = document.getElementById(p);
+                par.innerHTML = "Ha tardado " + tiempo + " milisegundos";
+            }
+            function toMilisegundos(a){
+                var i_ms = a.getMilliseconds()*1;
+                i_ms += a.getSeconds() * 1000;
+                i_ms += a.getMinutes() * 60 * 1000;
+                i_ms += a.getHours() * 60 * 60 * 1000;
+                console.log(i_ms);
+                return i_ms;
+            }
+            $(document).ready(function(){
+                $('#btn1').click(avanzar);
+            });
+            function avanzar(){
+                var t=document.getElementById("repeticiones").value || 1;                
+                var inicio1 = new Date();                
+                for (var i=1;i<=t;i++){
+                    avanzarJQ();
+                }
+                var final1 = new Date();
+                darTiempo(inicio1,final1,"res1");
+                var inicio2 = new Date();                
+                for (var j=1;j<=t;j++){
+                    avanzarVJS();
+                }
+                var final2 = new Date();
+                darTiempo(inicio2,final2,"res2");
+            }
+            function avanzarJQ(){
+                var $foo=$('#p1');//si es un id "#" si es una clase "."
+                //console.log($foo.html());
+            }
+            function avanzarVJS(){
+                var foo=document.getElementById("p1");
+                //console.log(foo.innerHTML);
+            }
+        </script>
+    </body>
+</html>
