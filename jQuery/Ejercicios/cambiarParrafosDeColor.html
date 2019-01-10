@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $('#verde').click(function(){
+              $('p').css({
+                 'color':'green' 
+              });
+           });
+            
+            $('#azul').click(function(){
+              $('.rojo').css({
+                 'color':'blue' 
+              });
+           });
+            $('#cambiar').click(function(){
+                var $num = $('#numero').val();
+                console.log($num);
+                $('p').css({'font-size':$num+'pt'});
+            });
+        });
+        
+       
+        
+        
+    </script>
+</head>
+
+<body>
+    <p>Hola</p>
+    <p>Adiós</p>
+    <p class="rojo" style="color: red">Este parrafo es Rojo</p>
+    <button id="verde">Todos los parrafos serán verde</button><br />
+    <button id="azul">Todos los p de la clase rojo serán azules</button><br />
+    <input type="text" id="numero" value="20"/>
+    <button id="cambiar">Cambiar tamaño</button>
+</body>
+
+</html>
