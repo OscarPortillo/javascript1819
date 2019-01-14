@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="javier soriano">
+    <title>3.9_ej1 Delegación de Eventos con jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+        li {
+            margin: 0.5em;
+            padding: 0.2em;
+            padding-left: 1em;
+            background-color: aqua;
+            width: 200px;
+            font-size: 1.2em;
+            transition: background-color 0.5s ease;
+        }
+
+        li:hover {
+            background-color: lightgrey;
+        }
+
+        button {
+            font-size: 1.5em;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p>Se incluyen el código js y css en el mismo archivo por cuestiones didacticas</p>
+    <p>Este ejercicio sirve de ejemplo a los capítulos: <a href="https://cursosgs.es/dwec/2017/12/03/3-8-eventos-con-jquery/">3.8 Eventos con jQuery</a> y <a href="https://cursosgs.es/dwec/2017/12/03/3-9-delegacion-de-eventos/">3.9 Delegación de eventos</a></p>
+    <button id="btn_anadir">Añadir Elemento a la lista</button>
+    <ul id="lista1">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+    </ul>
+    <hr>
+    El siguiente botón añade un 'handler' a todos los elementos de la lista SIN DELEGACIÓN. Cuando se haga click se lanzará una alerta. Esta unión se hace con el método .bind().<br>
+    <button id="btn_sinDel">Añadir evento click SIN delegación</button>
+    <hr>
+    El siguiente botón añade un 'handler' a todos los elementos de la lista CON DELEGACIÓN. Cuando se haga click se lanzará una alerta. Esta unión se hace con el método .on().<br>
+    <button id="btn_conDel">Añadir evento click CON delegación</button>
+    <hr>
+    El siguiente boton desasigna los eventos que hubieramos unido usando bind().<br>
+    <button id="btn_borrar_bind">Borrar eventos de .bind() ( usaremos .unbind() )</button>
+    <hr>
+    El siquiente botón desasigna los eventos que hubieramos unido usando on().<br>
+    <button id="btn_borrar_on">Borrar eventos de .on() ( usaremos .off() )</button>
+    <script>
+        //se mezclan los métodos para una mejor comprension.
+        //se ha añadido el 'mouseover' en las funciones noDelegado() y delegado() para que sirva de ejemplo de como añadir 2 eventos diferentes a  la misma selección.
+
+        var $contador = 1;
+
+        function mostrarElemento() {
+            $("li").each(function(index) {
+                alert(index + ": " + $(this).text());
+            });
+        }
+
+        function noDelegado() {
+            $('#lista1 li').bind({
+                'click': function() {
+                    alert('Evento con función SIN delegación');
+                },
+                'mouseover': function() {
+                    console.log('sobrevolado 1');
+                }
+            });
+        }
+
+        function delegado() {
+            $('#lista1').on({
+                'click li': function() {
+                    alert('Evento de la función CON delegación');
+                },
+                'mouseover li': function() {
+                    console.log('sobrevolado 2');
+                }
+            });
+        }
+
+
+        function borrarBind() {
+            $('#lista1 li').unbind();
+        }
+
+        function borrarOn() {
+            // como ejemplo, solo se borra el click y mantenemos el mouseover
+            // para borrar todos los eventos:
+            // $('#lista1').off();
+            $('#lista1').off('click');
+        }
+        $('#btn_anadir').click(function() {
+            $('#lista1').append('<li>Elemento añadido ' + $contador++ + '</li>');
+        });
+        $('#lista1 li').on('click', mostrarElemento);
+        $('#btn_sinDel').on('click', noDelegado);
+        $('#btn_conDel').on('click', delegado);
+        $('#btn_borrar_on').on('click', borrarOn);
+        $('#btn_borrar_bind').on('click', borrarBind);
+
+    </script>
+</body>
+
+</html>
