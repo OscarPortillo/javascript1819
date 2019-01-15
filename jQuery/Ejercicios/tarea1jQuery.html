@@ -25,7 +25,6 @@
             font-size: 1.5em;
             margin: 20px;
         }
-
     </style>
 </head>
 
@@ -58,9 +57,9 @@
         var $contador = 1;
 
         function mostrarElemento() {
-            $("li").each(function(index) {
-                alert(index + ": " + $(this).text());
-            });
+                $("#lista1 li").bind('click', function() {
+                    alert($(this).html());
+                });
         }
 
         function noDelegado() {
@@ -99,12 +98,11 @@
         $('#btn_anadir').click(function() {
             $('#lista1').append('<li>Elemento añadido ' + $contador++ + '</li>');
         });
-        $('#lista1 li').on('click', mostrarElemento);
+        $('#lista1').on('click', mostrarElemento);
         $('#btn_sinDel').on('click', noDelegado);
         $('#btn_conDel').on('click', delegado);
         $('#btn_borrar_on').on('click', borrarOn);
         $('#btn_borrar_bind').on('click', borrarBind);
-
     </script>
 </body>
 
