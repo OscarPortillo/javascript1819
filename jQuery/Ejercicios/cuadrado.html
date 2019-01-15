@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        div#tablero {
+            width: 700px;
+            height: 700px;
+            margin: auto;
+        }
+
+        div.casilla {
+            background-color: black;
+            width: 10px;
+            height: 10px;
+            float: left;
+            margin: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="tablero">
+        <!-- 6400 cuadrados dentro -->
+        <div class="casilla">
+
+        </div>
+
+    </div>
+    <script>
+        $(function() {
+            function reloj() {
+                momentoActual = new Date();
+                hora = momentoActual.getHours();
+                minuto = momentoActual.getMinutes();
+                segundo = momentoActual.getSeconds();
+                milisecundos = momentoActual.getMilliseconds();
+
+                horaImprimible = hora + " : " +
+                    minuto + " : " + segundo + " : " + milisecundos;
+                console.log(horaImprimible);
+            }
+
+            $tablero = $('#tablero');
+            reloj();
+
+            var cadena = "";
+            for (var i = 1; i < 6400; i++) {
+                cadena += "<div class='casilla'> </div>";
+            }
+            $tablero.append(cadena);
+            reloj();
+
+
+            $('.casilla').hover(
+                function() {
+                    $(this).css("background-color", "llelow");
+                },
+                function() {
+                    $(this).css("background-color", "white");
+                }
+            );
+        });
+
+    </script>
+</body>
+
+</html>
