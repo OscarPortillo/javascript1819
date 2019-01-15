@@ -25,6 +25,7 @@
             font-size: 1.5em;
             margin: 20px;
         }
+
     </style>
 </head>
 
@@ -54,7 +55,7 @@
         //se mezclan los métodos para una mejor comprension.
         //se ha añadido el 'mouseover' en las funciones noDelegado() y delegado() para que sirva de ejemplo de como añadir 2 eventos diferentes a  la misma selección.
 
-
+        var $contador = 5;
         function noDelegado() {
             $('#lista1 li').bind({
                 'click': function() {
@@ -91,11 +92,11 @@
         $('#btn_anadir').click(function() {
             $('#lista1').append('<li>Elemento ' + $contador++ + '</li>');
         });
-
         $('#btn_sinDel').on('click', noDelegado);
         $('#btn_conDel').on('click', delegado);
         $('#btn_borrar_on').on('click', borrarOn);
         $('#btn_borrar_bind').on('click', borrarBind);
+
     </script>
 </body>
 
