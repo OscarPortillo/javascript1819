@@ -55,14 +55,7 @@
         //se mezclan los métodos para una mejor comprension.
         //se ha añadido el 'mouseover' en las funciones noDelegado() y delegado() para que sirva de ejemplo de como añadir 2 eventos diferentes a  la misma selección.
 
-        var $contador = 1;
-
-        function mostrarElemento() {
-            $("li").each(function(index) {
-                alert(index + ": " + $(this).text());
-            });
-        }
-
+        var $contador = 5;
         function noDelegado() {
             $('#lista1 li').bind({
                 'click': function() {
@@ -75,9 +68,9 @@
         }
 
         function delegado() {
-            $('#lista1').on({
+            $('#lista1 li').on({
                 'click li': function() {
-                    alert('Evento de la función CON delegación');
+                    alert($(this).html());
                 },
                 'mouseover li': function() {
                     console.log('sobrevolado 2');
@@ -97,9 +90,8 @@
             $('#lista1').off('click');
         }
         $('#btn_anadir').click(function() {
-            $('#lista1').append('<li>Elemento añadido ' + $contador++ + '</li>');
+            $('#lista1').append('<li>Elemento ' + $contador++ + '</li>');
         });
-        $('#lista1 li').on('click', mostrarElemento);
         $('#btn_sinDel').on('click', noDelegado);
         $('#btn_conDel').on('click', delegado);
         $('#btn_borrar_on').on('click', borrarOn);
