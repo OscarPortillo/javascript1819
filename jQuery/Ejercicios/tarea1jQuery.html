@@ -56,11 +56,11 @@
         //se ha añadido el 'mouseover' en las funciones noDelegado() y delegado() para que sirva de ejemplo de como añadir 2 eventos diferentes a  la misma selección.
 
         var $contador = 5;
-        
+
         function noDelegado() {
-            $('#lista1 li').bind({
+            $('#lista1').bind({
                 'click': function() {
-                    alert($(this).html()+' Evento con función SIN delegación');
+                    alert('Evento con función SIN delegación');
                 },
                 'mouseover': function() {
                     console.log('sobrevolado 1');
@@ -71,7 +71,7 @@
         function delegado() {
             $('#lista1 li').on({
                 'click li': function() {
-                    alert($(this).html()+" Evento CON DELEGACIÓN");
+                    alert($(this).html() + " Evento CON DELEGACIÓN");
                 },
                 'mouseover li': function() {
                     console.log('sobrevolado 2');

@@ -1,0 +1,83 @@
+ /* Se ha tomado la idea estética de:
+            https://codepen.io/supah/pen/NNNEqM
+            pero la resolucion no tiene nada que ver */
+            html,body{
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                background-color: aqua;
+                background: radial-gradient(ellipse farthest-corner at center bottom, #00FFC6,  #00A5C6);
+            }
+            h1,h2,h3{
+                text-align: center;
+            }
+            div#contenedor{
+                margin: auto;
+                width: 800px;
+                height: 800px;
+            }
+            div.cuadrante{
+                width: 48%;
+                height: 48%;
+                margin: 1px;
+                float: left;
+                position:relative;
+            }
+            #c1{
+                 box-shadow: -20px 0px 20px 0px #eee inset;
+                bottom: 0px;
+                color: red;
+                right: 0px;
+            }
+            #c2{
+                left: 0px;
+                color: black;
+                bottom: 0px;
+            }
+            #c3{
+                box-shadow: -20px 0px 20px 0px #eee inset;
+                top: 0px;
+                color: darkgoldenrod;
+                left:0px;
+
+            }
+            #c4{
+                top: 0px;
+                color:darkblue;
+                right:0px;
+            }
+            div.contenido{
+                color: #00A5C6;
+                background-color: whitesmoke;
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                display: flex;
+                flex-wrap: nowrap;
+                position:absolute;
+                overflow: hidden;
+            }
+            div.contenido > i{
+                margin:auto;
+            }
+            @media only screen and (max-width: 960px) {
+                /* Para pantallas grandes */
+                div#contenedor{
+                    width: 650px;
+                    height: 650px;
+                }
+            }
+            @media only screen and (max-width: 768px) {
+                /* Para pantallas medianas */
+                div#contenedor{
+                    width: 500px;
+                    height: 500px;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                /* Para pantallas pequeañas */
+                div#contenedor{
+                    width: 400px;
+                    height: 400px;
+                }
+            }
