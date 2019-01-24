@@ -1,0 +1,20 @@
+$(document).ready(function () {
+    $("#contenedor").one("mouseover", function () {
+        desaparecer(1);
+    })
+});
+var desaparecer = function (a) {
+    $("#c" + a).hide("slow", function () {
+        a = a + 1;
+        $("#c" + a).hide("slow", desaparecer(a));
+    });
+    if (a == 4) {
+        mostrar(1);
+    }
+}
+var mostrar = function (b) {
+    $("#c" + b).show("fast", function () {
+        b = b + 1;
+        $("#c" + b).show("fast", mostrar(b));
+    });
+}
