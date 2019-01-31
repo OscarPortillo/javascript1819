@@ -1,11 +1,10 @@
 $(document).ready(function () {
-
-    mostrarDivs();
+    crearDivs();
     AñadirEfecto();
 });
 
-function mostrarDivs() {
-    for (var i = 1; i < 30; i++) {
+function crearDivs() {
+    for (var i = 1; i <= 30; i++) {
         $('.contenedor').append('<div class="tubo"></div>');
     }
 }
