@@ -14,13 +14,13 @@ function AñadirEfecto() {
     $(".tubo").hover(
         function () {
             $(this).stop().animate({
-            height: '600px'
-        }, 'fast', 'linear');
+                height: '600px'
+            }, 'fast', 'linear');
         },
         function () {
             $(this).stop().animate({
-            height: '300px'
-        }, 'fast', 'linear');
+                height: '300px'
+            }, 'fast', 'linear');
         }
     );
 }
