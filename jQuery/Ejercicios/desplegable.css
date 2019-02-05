@@ -40,10 +40,10 @@
 #menu ul ul li {
     float: none; 
 }
-/* 
+
 #menu ul li:hover > ul {
     visibility: visible; 
-}*/
+}
  
 #menu ul ul {
     top: 0;
