@@ -4,6 +4,8 @@ $(function () {
     // console.log("Final");
 });
 
+var objeto;
+
 var cargarAjax = function () {
     $.ajax({
         url: "./desplegable.json",
@@ -11,42 +13,51 @@ var cargarAjax = function () {
     }).done(function (respuesta) {
         //console.log("Lectura ajax");
         //console.log(respuesta);
-        pintarDatos(respuesta);
+        objeto = respuesta;
+        //pintarDatos(respuesta);
+        pintarDatos();
         // console.log("final Lectura ajax");
     }).fail(function () {
-        // console.log("Fallo");
+        console.log("Fallo");
     }).always(function () {
         //        document.write("<p>Finalizando</p>");
     });
 }
-var pintarDatos = function (respuesta) {
-    var menu = document.getElementById("menu");
-    var ul1 = document.createElement("ul");
-    for (let m of respuesta.menu) {
-        if (m.hijos != null) {
-            menu.append(ul1);
-            $("ul").append("<li>" + m.denominacion + "<br><a href='#'>" + m.url + "</a><button class='boton'>&rarr;</button></li>");
+var pintarDatos = function () {
 
-            /*****hijos*/
-            //console.log(m.hijos)
-            
-            console.log("Cambio de nivel")
 
+    var contaHijos = 1;
+    for (m of objeto.menu) {
+        if (compruebaHijos(m.hijos)) {
+            verDatosConHijos(m);
         } else {
-            menu.append(ul1);
-            $("ul").append("<li>" + m.denominacion + "<br><a href='#'>" + m.url + "</a></li>");
+            verDatosSinHijos(m);
         }
     }
 }
 
+function verDatosConHijos(obj) {
+    console.log(obj)
+    var menu = document.getElementById("menu");
+    var ul = document.createElement("ul");
+        menu.append(ul);
+        $(ul).append("<li>" + obj.denominacion + "<br><a href='#'>" + obj.url + "</a><button class='boton'>&rarr;</button></li>");
+    
+}
 
-/*for (hijo1 of m.hijos) {
-            var ul2 = document.createElement("ul");
-            if (hijo1.hijos != null) {
-                ul1.append(ul2);
-                $("ul li").append("<li>" + hijo1.denominacion + "<br><a href='#'>" + hijo1.url + "</a><button class='boton'>&rarr;</button></li>");
-            } else {
-                ul1.append(ul2);
-                $("ul").append("<li>" + hijo1.denominacion + "<br><a href='#'>" + hijo1.url + "</a></li>");
-            }
-        }*/
+function verDatosSinHijos(obj) {
+    var menu = document.getElementById("menu");
+    var ul = document.createElement("ul");
+    console.log(obj)
+    menu.append(ul);
+    $(ul).append("<li>" + obj.denominacion + "<br><a href='#'>" + obj.url + "</a></li>");
+
+}
+
+function compruebaHijos(hijo) {
+    if (hijo != null) {
+        return true;
+    } else {
+        return false;
+    }
+}

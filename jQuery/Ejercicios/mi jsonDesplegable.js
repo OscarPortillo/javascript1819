@@ -66,3 +66,33 @@ function mostrarSubMenu() {
    
 }
 */
+
+
+
+/*
+
+ for (m of objeto.menu) {
+        if (m.hijos != null) {
+            menu.append(ul1);
+            $("ul").append("<li id=" + conId + ">" + m.denominacion + "<br><a href='#'>" + m.url + "</a><button class='boton'>&rarr;</button></li>");
+
+            
+            //console.log(m.hijos)
+            console.log("Cambio de nivel")
+            //console.log("tiene "+m.length+" hijos")
+            var ul2 = document.createElement("ol");
+            console.log(conId)
+            for (hijo1 of m.hijos) {
+                $("#" + conId).append(ul2);
+                $(ul2).append("<li>" + hijo1.denominacion + "<br><a href='#'>" + hijo1.url + "</a><button class='boton'>&rarr;</button></li>");
+            }
+
+        } else {
+            console.log("Cambio de nivel")
+            console.log(conId)
+            menu.append(ul1);
+            $("ul").append("<li id=" + conId + ">" + m.denominacion + "<br><a href='#'>" + m.url + "</a></li>");
+        }
+        conId++;
+    }
+*/
