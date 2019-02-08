@@ -1,4 +1,4 @@
-#menu {
+/*#menu {
     padding: 0;
     margin: 0;
     border: 0; 
@@ -45,6 +45,7 @@
     visibility: visible; 
 }
  */
+/*
 #menu ul ul {
     top: 0;
     left: 100%; 

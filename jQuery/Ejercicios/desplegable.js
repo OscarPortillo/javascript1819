@@ -45,7 +45,7 @@ var pintarDatos = function () {
 function verHijos(obj, id) {
     var id2 = 1;
     var ul = document.createElement("ul");
-    console.log(id)
+    //console.log(id)
     for (m of obj.hijos) {        
         if (m.hijos != null) {//compruebo si tiene hijos
             //si tiene hijos muetro botones y llamo de nuevo ala funcion 
@@ -62,8 +62,10 @@ function verHijos(obj, id) {
 function mostrar(){
     lista = document.getElementsByTagName("button");
     for(let i of lista){
-        console.log(i)
-        i.onclick= function(){            
+        //console.log(i)
+        i.onclick= function(){
+            var m = $(this).parent();
+            $(m).children().hide();
         }
     }
 }
