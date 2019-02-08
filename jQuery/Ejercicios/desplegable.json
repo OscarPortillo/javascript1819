@@ -38,7 +38,31 @@
           },
                 {
                     "denominacion": "nivel 2.2",
-                    "url": "http://www.google.es"
+                    "url": "http://www.google.es",
+                    "hijos": [
+                        {
+                            "denominacion": "nivel 2.2.1",
+                            "url": "http://www.google.es",
+                            "target": "_blank"
+          },
+                        {
+                            "denominacion": "nivel 2.2.2",
+                            "url": "http://www.google.es",
+                            "hijos": [
+                                {
+                                    "denominacion": "nivel 2.2.2.1",
+                                    "url": "http://www.google.es",
+                                    "target": "_blank"
+          },
+                                {
+                                    "denominacion": "nivel 2.2.2.2",
+                                    "url": "http://www.google.es"
+          }
+
+        ]
+          }
+
+        ]
           }
 
         ]
