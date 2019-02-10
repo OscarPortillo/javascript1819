@@ -16,6 +16,7 @@ var cargarAjax = function () {
         objeto = respuesta;
         //pintarDatos(respuesta);
         pintarDatos();
+        mostrarOcultar();
         // console.log("final Lectura ajax");
     }).fail(function () {
         console.log("Fallo");
@@ -30,12 +31,14 @@ var pintarDatos = function () {
     for (m of objeto.menu) {
         if (m.hijos != null) {
             menu.append(ul);
-            $(ul).append("<li id=" +"nivel"+ id + ">" + m.denominacion + "<br><a href='#'>" + m.url + "</a><button class='boton'>&rarr;</button></li>");
+            $(ul).append("<li id=" + "nivel" + id + ">" + m.denominacion + "<br><a href='#'>" + m.url + "</a><button class='boton'>&harr;</button></li>");
             //console.log(m)
+            $("#nivel" + id).children().hide();
+            $(".boton").show();
             verHijos(m, id);
-            mostrar();
+
         } else {
-            $(ul).append("<li id=" +"nivel"+ id + ">" + m.denominacion + "<br><a href='#'>" + m.url + "</a></li>");
+            $(ul).append("<li id=" + "nivel" + id + ">" + m.denominacion + "<br><a href='#'>" + m.url + "</a></li>");
             //console.log(m)
         }
         id++;
@@ -46,26 +49,33 @@ function verHijos(obj, id) {
     var id2 = 1;
     var ul = document.createElement("ul");
     //console.log(id)
-    for (m of obj.hijos) {        
-        if (m.hijos != null) {//compruebo si tiene hijos
+    for (m of obj.hijos) {
+        if (m.hijos != null) { //compruebo si tiene hijos
             //si tiene hijos muetro botones y llamo de nuevo ala funcion 
+            $("#nivel" + id).append(ul);           
+            $(ul).append("<li id=" + "nivel" + id + "" + id2 + ">" + m.denominacion + "<br><a href='#'>" + m.url + "</a><button class='boton'>&harr;</button></li>");   $("#nivel" + id + "" + id2 ).children().hide();
+            $(".boton").show();
+            verHijos(m, id + "" + id2); //le paso el id del li anterior para que le añada otro ul anidado
+        } else { //si no tiene hijos no muestro botones
             $("#nivel" + id).append(ul);
-            $(ul).append("<li id=" +"nivel"+ id+""+id2 + ">" + m.denominacion + "<br><a href='#'>" + m.url + "</a><button class='boton'>&rarr;</button></li>");
-            verHijos(m, id+""+id2);//le paso el id del li anterior para que le añada otro ul anidado
-        } else {//si no tiene hijos no muestro botones
-            $("#nivel" + id).append(ul);
-            $(ul).append("<li id=" +"nivel"+ id+id2 + ">" + m.denominacion + "<br><a href='#'>" + m.url + "</a></li>");
+            $(ul).append("<li id=" + "nivel" + id + id2 + ">" + m.denominacion + "<br><a href='#'>" + m.url + "</a></li>");
         }
-        id2++;//le sumo 1 a id2 para que sea nievel11 nievel12 etc...
+        id2++; //le sumo 1 a id2 para que sea nievel11 nievel12 etc...
     }
 }
-function mostrar(){
+
+function mostrarOcultar() {
     lista = document.getElementsByTagName("button");
-    for(let i of lista){
+    for (let i of lista) {
         //console.log(i)
-        i.onclick= function(){
-            var m = $(this).parent();
-            $(m).children().hide();
+        i.onclick = function () {
+            if ($(this).siblings().is(":visible")) {
+                console.log("El hijueputa esta escondido")
+                $(this).siblings().hide();
+            } else {
+                console.log("El hijueputa esta visible")
+                $(this).siblings().show();
+            }
         }
     }
 }
