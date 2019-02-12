@@ -31,7 +31,7 @@ var pintarDatos = function () {
     for (let m of objeto.menu) {
         if (m.hijos != null) {
             menu.append(ul);
-            $(ul).append("<li id=" + "nivel" + id + "><br><a href='"+m.url+"'>" + m.denominacion + "</a><button class='boton'>&darr;</button></li>");
+            $(ul).append("<li id=" + "nivel" + id + ">" + m.denominacion + "<br><a href='"+m.url+"'>" + m.url + "</a><button class='boton'>&darr;</button></li>");
             //console.log(m)
             $("#nivel" + id).children().hide();
             $(".boton").show();
