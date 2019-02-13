@@ -3,6 +3,7 @@
       {
         "denominacion":"nivel 1",
         "url":"http://www.google.es",
+          "target":"_blank",
         "hijos":[
           {
             "denominacion":"nivel 1.1",
