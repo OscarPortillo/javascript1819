@@ -1,3 +1,6 @@
+/*body {
+    background-color: #CECEF6;
+}
 a {
     text-decoration: none;
 }
@@ -38,7 +41,7 @@ li a {
 }
 
 li a:hover {
-    background: #f6f6f6;
+    background: #58ACFA;
 }
 
 ul li {

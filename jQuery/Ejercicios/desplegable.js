@@ -23,12 +23,12 @@ var cargarAjax = function () {
         //document.write("<p>Finalizando</p>");
     });
 }
-var pintarDatos = function () {
-    var menu = $("#menu");
-    var ul = document.createElement("ul");
-    var id = 1;
 
-    for (let m of objeto.menu) {
+function pintarDatos() {
+    var id = 1
+    var ul = "<ul>"
+    var li = ""
+    for (m of objeto.menu) {
         var targetAtr = "";
         var target = m.hasOwnProperty('target') ? m.target : null
         if (target != null) {
@@ -36,21 +36,24 @@ var pintarDatos = function () {
         } else {
             targetAtr = "";
         }
-        if (m.hijos != null) {
-            menu.append(ul);
-
-            $(ul).append("<li id=" + "nivel" + id + "><a class='enlace' href='" + m.url + "' " + targetAtr + ">" + m.denominacion + "</a><button class='boton'>&darr;</button></li>")
-            verHijos(m, id);
+        if (m.hijos) {
+            //console.log("tiene hijos")
+            ul += "<li id=" + "nivel" + id + "><a class='enlace' href='" + m.url + "' " + targetAtr + ">" + m.denominacion + "</a><button class='boton'>&darr;</button></li>"
+            verHijos(m,id)
         } else {
-            $(ul).append("<li id=" + "nivel" + id + "><a href='" + m.url + "' " + targetAtr + ">" + m.denominacion + "</a></li>");
+            //console.log("no tiene hijos")
+            ul+= "<li id=" + "nivel" + id + "><a href='" + m.url + "' " + targetAtr + ">" + m.denominacion + "</a></li>"
         }
-        id++;
+        id++
     }
+    ul += "</ul>"
+    $("#menu").append(ul)
 }
 
 function verHijos(obj, id) {
+    console.log("nivel"+id)
     var id2 = 1;
-    var ul = document.createElement("ul");
+    var ul = "<ul>"
     for (let m of obj.hijos) {
         var target = m.hasOwnProperty('target') ? m.target : null
         if (target != null) {
@@ -58,69 +61,41 @@ function verHijos(obj, id) {
         } else {
             targetAtr = "";
         }
-        if (m.hijos != null) { //compruebo si tiene hijos
-            //si tiene hijos muetro botones y llamo de nuevo ala funcion 
-            $("#nivel" + id).append(ul);
-            $(ul).append("<li id=" + "nivel" + id + "" + id2 + "><a class='enlace' href='" + m.url + "' "+targetAtr+" >" + m.denominacion + "</a><button class='boton'>&darr;</button></li>");
-            verHijos(m, id + "" + id2); //le paso el id del li anterior para que le añada otro ul anidado
-        } else { //si no tiene hijos no muestro botones
-            $("#nivel" + id).append(ul);
-            $(ul).append("<li id=" + "nivel" + id + id2 + "><a href='" + m.url + "' "+targetAtr+">" + m.denominacion + "</a></li>");
+        //console.log(m)
+        if(m.hijos){
+            console.log("se añade con hijo")
+            ul+="<li id=" + "nivel" + id + "" + id2 
+                + "><a class='enlace' href='" + m.url + "' " + targetAtr
+                 + " >" + m.denominacion + "</a><button class='boton'>&darr;</button></li>"
+            //console.log(ul);
+            //verHijos(m,id+""+id2)
+        } else {
+            console.log("se añadesin hijos")
+            ul+= "<li id=" + "nivel" + id + "><a href='" + m.url + "' " + targetAtr + ">" + m.denominacion + "</a></li>"
         }
         id2++; //le sumo 1 a id2 para que sea nievel11 nievel12 etc...
     }
+    ul += "</ul>"
+    $("#nivel"+id).append(ul)
+    //$("#nivel" + id).append(ul);
 }
 
 function mostrarOcultar() {
     lista = document.getElementsByTagName("button");
     for (let i of lista) {
         i.onclick = function (e) {
-            console.log($(this).html())
+            //console.log($(this).html())
             if ($(this).html() == "↓") {
                 console.log($(this))
-                $(this).siblings().show()
+                $(this).siblings().slideDown("slow");
                 e.target.innerHTML = "&uarr;"
+                console.log(" esta desplegado")
             } else {
-                console.log("esta parriba")
-                //$(this).siblings().not(".enlace").hide()
+                console.log("no esta desplegado")
                 e.target.innerHTML = "&darr;"
-                $($(e.target).parent()).children("ul").hide();
+                $($(e.target).parent()).children("ul").slideUp("slow")
 
             }
         }
     }
 }
-/*
-function mostrarOcultar() {
-    lista = document.getElementsByTagName("button");
-    for (let i of lista) {
-        if ($(this).siblings().is(":visible")) {
-            e.target.innerHTML="&darr;"
-            console.log("El wey esta escondido")
-            $(this).siblings().hide();
-        } else {
-            e.target.innerHTML="&uarr;"
-            console.log($(this).html())
-            console.log("El wey esta visible")
-            $(this).siblings().show();
-        }
-    }
-}*/
-
-/*
-function compruebaHijos(hijo) {
-    if (hijo != null) {
-        return true;
-    } else {
-        return false;
-    }
-}
-*/
-
-//PRUEBA
-/*
-var asigarEvento = function(){
-    $(".boton").click(function(){
-       alert("Hola") 
-    });
-}*/
