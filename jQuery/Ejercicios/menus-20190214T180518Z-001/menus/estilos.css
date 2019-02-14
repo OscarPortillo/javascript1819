@@ -1,0 +1,9 @@
+#contenedor{
+  position: relative;
+  margin: auto;
+
+}
+
+.button{
+	cursor: pointer;
+}
