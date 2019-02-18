@@ -1,0 +1,196 @@
+{
+  "menu": [
+      {
+        "denominacion":"Google",
+        "url":"http://www.google.es",
+        "target":"_blank",
+        "hijos":[
+          {
+            "denominacion":"Google Drive",
+            "url":"https://www.google.es/drive/",
+            "target":"_blank"
+          },
+          {
+            "denominacion":"Gmail",
+            "url":"https://www.google.com/gmail/",
+            "hijos":[
+              {
+                "denominacion":"About Gmail",
+                "url":"https://www.google.com/intl/es/gmail/about/",
+                "target":"_blank"
+              },
+              {
+                "denominacion":"Support Gmail",
+                "url":"https://support.google.com",
+                "target":"_blank"
+              }
+            ]
+          }
+          ]
+      },
+      {
+        "denominacion":"Universidad de Zaragoza",
+        "url":"https://www.unizar.es/",
+        "hijos":[
+          {
+            "denominacion":"Estudios",
+            "url":"https://www.unizar.es/estudios",
+            "target":"_blank"
+          },
+          {
+            "denominacion":"Estudiantes",
+            "url":"http://www.unizar.es/estudiantes",
+            "target":"_blank"
+          },
+            {
+            "denominacion":"Secretaria Virtual",
+            "url":"https://academico.unizar.es/secretaria-virtual",
+            "target":"_blank"
+          },
+            {
+            "denominacion":"Moodle Unizar",
+            "url":"https://moodle2.unizar.es/",
+            "target":"_blank"
+          }
+          
+        ]
+      },
+    
+    {
+        "denominacion":"CursosGS.es",
+        "url":"https://cursosgs.es/dwec/",
+        "hijos":[
+          {
+            "denominacion":"Acerca de",
+            "url":"https://cursosgs.es/dwec/acerca-de/",
+            "target":"_blank"
+          },
+          {
+            "denominacion":"Ajax",
+            "url":"https://cursosgs.es/dwec/?s=Ajax",
+            "target":"_blank",
+            "hijos":[
+              {
+                "denominacion":"Ajax con VanillaJS",
+                "url":"https://cursosgs.es/dwec/2017/12/04/4-1-introduccion/",
+                "target":"_blank",
+                  "hijos":[
+                      {
+                          "denominacion":"Primeros pasos",
+                          "url":"https://cursosgs.es/dwec/2017/12/04/4-2-primeros-pasos/"
+                      },
+                      {
+                          "denominacion":"Ajax y JSON",
+                          "url":"https://cursosgs.es/dwec/2017/12/04/4-3-ajax-y-json/"
+                      }
+                  ]
+              },
+              {
+                "denominacion":"Ajax con jQuery",
+                "url":"https://cursosgs.es/dwec/2017/12/04/4-4-ajax-con-jquery/",
+                "target":"_blank"
+              }
+            ]
+          }
+          ]
+      }
+      ,{
+        "denominacion":"jQuery",
+        "target":"_blank",
+        "url":"https://jquery.com/",
+          "hijos":[
+              {
+                "denominacion":"jQuery CDN",
+                "url":"https://code.jquery.com/",
+                  "target":"_blank"
+              },
+              {
+                "denominacion":"jQuery Learning Center",
+                "url":"https://learn.jquery.com/",
+                  "target":"_blank"
+              }
+          ]
+      }
+      ,{
+        "denominacion":"Microsoft España",
+        "target":"_blank",
+        "url":"https://www.microsoft.com/es-es"
+      },
+      {
+        "denominacion":"Asus España",
+        "target":"_blank",
+        "url":"https://www.asus.com/es/",
+        "hijos":[
+           {
+            "denominacion":"Portátiles",
+            "target":"_blank",
+            "url":"https://eshop.asus.com/es-ES/portatiles/",
+            "hijos":[
+                {
+                  "denominacion":"Gaming",
+                  "target":"_blank",
+                 "url":"https://www.asus.com/es/Laptops/Gaming-Series-Products/",
+                    "hijos":[
+                    {
+                        "denominacion":"ROG-ZEPHYRUS-GX501",
+                        "target":"_blank",
+                        "url":"https://www.asus.com/es/Laptops/ROG-ZEPHYRUS-GX501/",
+                        "hijos":[
+                            {
+                            "denominacion":"Especificaciones",
+                            "target":"_blank",
+                            "url":"https://www.asus.com/es/Laptops/ROG-ZEPHYRUS-GX501/specifications/"
+                            },
+                            {
+                              "denominacion":"Galeria",
+                            "target":"_blank",
+                            "url":"https://www.asus.com/es/Laptops/ROG-ZEPHYRUS-GX501/gallery/"  
+                            }
+                        ]
+                    },
+                    {
+                        "denominacion":"ROG-Strix-SCAR-Edition",
+                        "target":"_blank",
+                        "url":"https://www.asus.com/es/Laptops/ROG-Strix-SCAR-Edition/"     
+                    }
+                    ]
+                },{
+                  "denominacion":"ZenBook",
+                  "target":"_blank",
+                 "url":"https://www.asus.com/es/Laptops/ZenBook-Series-Home/"
+                }
+               ]
+           },
+            {
+            "denominacion":"Soporte",
+            "target":"_blank",
+            "url":"https://www.asus.com/es/support/"
+           },
+            {
+            "denominacion":"Sobremesa",
+            "target":"_blank",
+            "url":"https://eshop.asus.com/es-ES/sobremesas",
+            "hijos":[
+                {
+                "denominacion":"Mini-PC",
+                "target":"_blank",
+                "url":"https://www.asus.com/es/Mini-PCs/"    
+                },
+                {
+                "denominacion":"Tipo Torre",
+                "target":"_blank",
+                "url":"https://www.asus.com/es/Tower-PCs/"  
+                }
+                ]
+           },
+            {
+            "denominacion":"Premios",
+            "target":"_blank",
+            "url":"https://www.asus.com/es/Award/"
+           }
+          ]
+          
+      }
+      
+    ]
+    }

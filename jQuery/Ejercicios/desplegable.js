@@ -28,15 +28,16 @@ function pintarDatos(objeto) {
     var li = ""
     for (m of objeto) {
         var targetAtr = "";
-        var target = m.hasOwnProperty('target') ? m.target : null
-        if (target != null) {
+        //var target = m.hasOwnProperty('target') ? m.target : null
+        var target = ""
+        if (m.hasOwnProperty('target') != null) {//haciendo esto me ahorro la linea de arriba
             targetAtr = "target='" + target + "'";
         } else {
             targetAtr = "";
         }
         if (m.hijos) {
             //console.log("tiene hijos")
-            ul += "<li><a class='enlace' href='" + m.url + "' " + targetAtr + ">" + m.denominacion + "</a><button class='boton'>&darr;</button>"
+            ul += "<li><a class='enlace' href='" + m.url + "' " + targetAtr + ">" + m.denominacion + "</a><button class='boton'>⬇️</button>"
            pintarDatos(m.hijos)
         } else {
             //console.log("no tiene hijos")
@@ -54,14 +55,16 @@ function mostrarOcultar() {
     for (let i of lista) {
         i.onclick = function (e) {
             //console.log($(this).html())
-            if ($(this).html() == "↓") {
+            if ($(this).html() == "⬇️") {
                 //console.log($(this))
                 $(this).siblings().slideDown("slow");
-                e.target.innerHTML = "&uarr;"
+                //e.target.innerHTML = "&uarr;"
+                $(this).text("⬆️")//esta es la buena, la mía me ha reñido el profe
                 console.log(" esta desplegado")
             } else {
+                $(this).text("⬇️")//esta es la buena, la mía me ha reñido el profe
                 console.log("no esta desplegado")
-                e.target.innerHTML = "&darr;"
+                //e.target.innerHTML = "⬇️"
                 $($(e.target).parent()).children("ul").slideUp("slow")
 
             }
