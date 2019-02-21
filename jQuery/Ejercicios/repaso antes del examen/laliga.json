@@ -1,0 +1,165 @@
+{
+    "name": "Primera División 2017/18",
+    "clubs": [
+        {
+            "key": "barcelona",
+            "name": "Barcelona",
+            "code": "BAR",
+            "competiciones": [
+                "La Liga","Champions League","Copa del rey"
+            ]
+    },
+        {
+            "key": "espanyol",
+            "name": "Espanyol",
+            "code": "ESP",
+            "competiciones": [
+                "La Liga","Copa del rey"
+            ]
+    },
+        {
+            "key": "madrid",
+            "name": "R. Madrid",
+            "code": "RMD",
+            "competiciones": [
+                "La Liga","Champions League","Copa del rey"
+            ]
+    },
+        {
+            "key": "atletico",
+            "name": "Atlético",
+            "code": "ATL",
+            "competiciones": [
+                "La Liga","Champions League","Copa del rey"
+            ]
+    },
+        {
+            "key": "getafe",
+            "name": "Getafe",
+            "code": "GET",
+            "competiciones": [
+                "La Liga"
+            ]
+    },
+        {
+            "key": "sevilla",
+            "name": "Sevilla",
+            "code": "SEV",
+            "competiciones": [
+                "La Liga","UEFA","Copa del rey"
+            ]
+    },
+        {
+            "key": "valencia",
+            "name": "Valencia",
+            "code": "VAL",
+            "competiciones": [
+                "La Liga","UEFA","Copa del rey"
+            ]
+    },
+        {
+            "key": "levante",
+            "name": "Levante",
+            "code": "LEV",
+            "competiciones": [
+                "La Liga"
+            ]
+    },
+        {
+            "key": "malaga",
+            "name": "Málaga",
+            "code": "MAG",
+            "competiciones": [
+                "La Liga"
+            ]
+    },
+        {
+            "key": "athletic",
+            "name": "Athletic",
+            "code": "ATH",
+            "competiciones": [
+                "La Liga","UEFA"
+            ]
+    },
+        {
+            "key": "celta",
+            "name": "Celta",
+            "code": "CEL",
+            "competiciones": [
+                "La Liga","Copa del rey"
+            ]
+    },
+        {
+            "key": "realsociedad",
+            "name": "R. Sociedad",
+            "code": "RSO",
+            "competiciones": [
+                "La Liga","Copa del rey"
+            ]
+    },
+        {
+            "key": "deportivo",
+            "name": "Deportivo",
+            "code": "DEP",
+            "competiciones": [
+                "La Liga"
+            ]
+    },
+        {
+            "key": "eibar",
+            "name": "Eibar",
+            "code": "EIB",
+            "competiciones": [
+                "La Liga"
+            ]
+    },
+        {
+            "key": "betis",
+            "name": "Betis",
+            "code": "BET",
+            "competiciones": [
+                "La Liga","Copa del rey","UEFA"
+            ]
+    },
+        {
+            "key": "laspalmas",
+            "name": "Las Palmas",
+            "code": "LPA",
+            "competiciones": [
+                "La Liga","Copa del rey"
+            ]
+    },
+        {
+            "key": "villareal",
+            "name": "Villarreal CF",
+            "code": "VLL",
+            "competiciones": [
+                "La Liga","Copa del rey"
+            ]
+    },
+        {
+            "key": "alaves",
+            "name": "Alavés",
+            "code": "ALA",
+            "competiciones": [
+                "La Liga"
+            ]
+    },
+        {
+            "key": "girona",
+            "name": "Girona",
+            "code": "GIR",
+            "competiciones": [
+                "La Liga"
+            ]
+    },
+        {
+            "key": "leganes",
+            "name": "Club Deportivo Leganés",
+            "code": "LEG",
+            "competiciones": [
+                "La Liga"
+            ]
+    }
+  ]
+}
