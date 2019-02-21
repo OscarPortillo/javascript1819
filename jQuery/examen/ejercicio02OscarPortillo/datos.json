@@ -1,0 +1,17 @@
+{
+  "archivos": [
+      {
+        "link":"./datos2.json"
+      },
+    {
+        "link":"./datos3.json"
+      },
+    {
+        "link":"./datos4.json"
+      },
+    {
+        "link":"./datos5.json"
+      }
+      
+    ]
+    }
