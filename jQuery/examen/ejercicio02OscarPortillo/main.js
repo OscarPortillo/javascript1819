@@ -50,7 +50,7 @@ function comprobarFcihero(ruta){
     });
 }
 function mostarDatosJson(objeto,ruta){
-    var mensaje= "<div class='"+ruta+"'>Fichero "+ruta+" cargador correctamente</div>"
+    var mensaje= "<div class='contenido'>Fichero "+ruta+" cargador correctamente</div>"
     //nsole.log(objeto)/
     var claveNombre = ""
     objeto.arrayColores.forEach(function(m){
@@ -61,5 +61,5 @@ function mostarDatosJson(objeto,ruta){
         claveNombre += "</div>"
     })
     $("#container").append(mensaje)
-    $("."+ruta).append(claveNombre)
+    $(".contenido").append(claveNombre)
 }
