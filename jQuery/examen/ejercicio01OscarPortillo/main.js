@@ -40,7 +40,7 @@ var animarBarras = function () {
 
 var pararAnimacion= function(){
     $("#btnOff").on('click',function(){
-        $(".barra").stop()
+        $(".barra").finish()
         $(".barra").animate({
             bottom : -250
         },"fast")
