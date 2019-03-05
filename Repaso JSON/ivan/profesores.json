@@ -1,0 +1,70 @@
+{
+    "profesores": [
+        {
+            "Nombre": "Javier",
+            "Apellido": "Soriano",
+            "Modulo": [
+                {
+                    "Nombre": "Cliente",
+                    "Curso": "DAW2"
+          }
+        ],
+            "Edad": 31
+      },
+        {
+            "Nombre": "Rafael",
+            "Apellido": "Cabeza",
+            "Modulo": [
+                {
+                    "Nombre": "Servidor",
+                    "Curso": "DAW2"
+          }
+        ],
+            "Edad": 47
+      },
+        {
+            "Nombre": "Sergio",
+            "Apellido": "Pacheco",
+            "Modulo": [
+                {
+                    "Nombre": "Diseño",
+                    "Curso": "DAW2"
+          }
+        ],
+            "Edad": 31
+      },
+        {
+            "Nombre": "David Juan",
+            "Apellido": "Marcén",
+            "Modulo": [
+                {
+                    "Nombre": "Despliegue",
+                    "Curso": "DAW2"
+          }
+        ],
+            "Edad": 54
+      },
+        {
+            "Nombre": "David Juan",
+            "Apellido": "Marcén",
+            "Modulo": [
+                {
+                    "Nombre": "Inglés",
+                    "Curso": "DAW2"
+          }
+        ],
+            "Edad": 54
+      },
+        {
+            "Nombre": "Elena",
+            "Apellido": "Portillo",
+            "Modulo": [
+                {
+                    "Nombre": "Empresa Emprendedora",
+                    "Curso": "DAW2"
+          }
+        ],
+            "Edad": 30
+      }
+    ]
+}

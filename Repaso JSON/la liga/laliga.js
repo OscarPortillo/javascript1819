@@ -84,7 +84,6 @@ function FiltrarCompeticionSeleccionada() {
 }
 
 function verCompeticion(compeFiltrada){
-    console.log("deberiamos")
     var contenedor = document.getElementById("container");
     objeto.clubs.sort(function (a, b) {
         return a.name.localeCompare(b.name);

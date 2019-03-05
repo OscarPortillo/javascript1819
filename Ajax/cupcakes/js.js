@@ -35,8 +35,7 @@ function cargarAjax() {
 function verDatos() {
     //console.log(objetoCupcakes);
     cargarDatosCupcake();
-    document.getElementById("sortDescendent").onclick =sortDescendent()
-    ;
+    document.getElementById("sortDescendent").onclick = sortDescendent();
     document.getElementById("sortAscendente").onclick = function () {
         sortAscendente()
     };
@@ -103,8 +102,8 @@ function cargarDatosCupcake() {
         /*ETIQUETAS*/
         var e = document.createElement("h5");
         e.innerHTML = "Etiquetas: ";
-        for(etiq of cupCake.etiquetas ){
-            e.innerHTML += etiq+", ";          
+        for (etiq of cupCake.etiquetas) {
+            e.innerHTML += etiq + ", ";
         }
         divCupcake.append(e);
         /*ETIQUETAS*/
@@ -153,7 +152,7 @@ function mostrarEtiquetas() {
             arrayEtiFiltrado = arrayEti.unique();
         }
     }
-    var eti=0;
+    var eti = 0;
     var contador = 1;
     for (let etiqueta of arrayEtiFiltrado) {
         var Cadena = arrayEti;
@@ -167,16 +166,16 @@ function mostrarEtiquetas() {
                 counter++;
             }
         }
-        console.log(arrayEtiFiltrado[eti]+" se repite "+counter);
-        
+        console.log(arrayEtiFiltrado[eti] + " se repite " + counter);
+
         var cat = document.createElement("div");
-        if(counter < 2){
+        if (counter < 2) {
             cat.className = "btn pequeño";
         }
-        if(counter >= 2 && counter< 4){
+        if (counter >= 2 && counter < 4) {
             cat.className = "btn medio";
         }
-        if(counter >= 4){
+        if (counter >= 4) {
             cat.className = "btn grande";
         }
         //cat.className = "btn";
@@ -263,11 +262,11 @@ function cargarFiltros(arrayFiltrado) {
         var descripcion = document.createTextNode(cupCake.descripcion);
         desCupcake.append(descripcion);
         /* DESCRIPCION*/
-         /*ETIQUETAS*/
+        /*ETIQUETAS*/
         var e = document.createElement("h5");
         e.innerHTML = "Etiquetas: ";
-        for(etiq of cupCake.etiquetas ){
-            e.innerHTML += etiq+", ";          
+        for (etiq of cupCake.etiquetas) {
+            e.innerHTML += etiq + ", ";
         }
         divCupcake.append(e);
         /*ETIQUETAS*/
