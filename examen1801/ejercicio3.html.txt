@@ -1,0 +1,26 @@
+console.clear()
+var y = 0
+var x = 0
+
+//const musica = ' ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ts ding ding ding ding ding ding ding ding ding ding ding ding ding'
+const musica = 'ts ts boom boom ding bing'
+//const musica = 'ts ts boom bing'
+
+for (m of musica.split(' ')) {
+  console.log(m)
+    if (m == "boom") {//x++
+      x = Math.min(x+1, 31)
+      console.log(x)
+    }
+    else if (m == "ts") {//x--
+        x = Math.max(x-1, 0)
+    }
+    else if (m == "bing") {//y++
+        y = Math.min(y+1, 11)
+    }
+  else if (m == "ding") {//y--
+        y = Math.max(y-1, 0)
+    }
+}
+console.log(x, y)  
+

@@ -22,10 +22,10 @@ window.onload = function () {
 }
 
 function crearEnlaces() {
-   lista = document.getElementsByTagName("li");
-    for(let i of lista){
+    lista = document.getElementsByTagName("li");
+    for (let i of lista) {
         console.log(i)
-        i.onclick= function(){
+        i.onclick = function () {
             alert(i.innerHTML)
         }
     }

@@ -1,105 +1,125 @@
 {
-  "name": "Serie A 2017/18",
-  "clubs": [
-    {
-      "key": "milan",
-      "name": "Milan",
-      "code": "MIL"
+    "name": "Serie A 2017/18",
+    "clubs": [
+        {
+            "key": "milan",
+            "name": "Milan",
+            "code": "MIL",
+            "city": "MILAN"
     },
-    {
-      "key": "inter",
-      "name": "Inter",
-      "code": "INT"
+        {
+            "key": "inter",
+            "name": "Inter",
+            "code": "INT",
+            "city": "MILAN"
     },
-    {
-      "key": "lazio",
-      "name": "Lazio",
-      "code": "LAZ"
+        {
+            "key": "lazio",
+            "name": "Lazio",
+            "code": "LAZ",
+            "city": "ROMA"
     },
-    {
-      "key": "roma",
-      "name": "Roma",
-      "code": "ROM"
+        {
+            "key": "roma",
+            "name": "Roma",
+            "code": "ROM",
+            "city": "ROMA"
     },
-    {
-      "key": "genoa",
-      "name": "Genoa",
-      "code": "GEN"
+        {
+            "key": "genoa",
+            "name": "Genoa",
+            "code": "GEN",
+            "city": "GENOA"
     },
-    {
-      "key": "sampdoria",
-      "name": "Sampdoria",
-      "code": "SAM"
+        {
+            "key": "sampdoria",
+            "name": "Sampdoria",
+            "code": "SAM",
+            "city": "ROMA"
     },
-    {
-      "key": "juventus",
-      "name": "Juventus",
-      "code": "JUV"
+        {
+            "key": "juventus",
+            "name": "Juventus",
+            "code": "JUV",
+            "city": "TURIN"
     },
-    {
-      "key": "torino",
-      "name": "Torino",
-      "code": "TOR"
+        {
+            "key": "torino",
+            "name": "Torino",
+            "code": "TOR",
+            "city": "TURIN"
     },
-    {
-      "key": "napoli",
-      "name": "Napoli",
-      "code": "NAP"
+        {
+            "key": "napoli",
+            "name": "Napoli",
+            "code": "NAP",
+            "city": "NAPOLES"
     },
-    {
-      "key": "atalanta",
-      "name": "Atalanta",
-      "code": "ATA"
+        {
+            "key": "atalanta",
+            "name": "Atalanta",
+            "code": "ATA",
+            "city": "BÉRGAMO"
     },
-    {
-      "key": "chievoverona",
-      "name": "Chievo",
-      "code": "CHI"
+        {
+            "key": "chievoverona",
+            "name": "Chievo",
+            "code": "CHI",
+            "city": "VERONA"
     },
-    {
-      "key": "fiorentina",
-      "name": "Fiorentina",
-      "code": "FIO"
+        {
+            "key": "fiorentina",
+            "name": "Fiorentina",
+            "code": "FIO",
+            "city": "FLORENCIA"
     },
-    {
-      "key": "udinese",
-      "name": "Udinese",
-      "code": "UDI"
+        {
+            "key": "udinese",
+            "name": "Udinese",
+            "code": "UDI",
+            "city": "FLORENCIA"
     },
-    {
-      "key": "sassuolo",
-      "name": "Sassuolo",
-      "code": "SAS"
+        {
+            "key": "sassuolo",
+            "name": "Sassuolo",
+            "code": "SAS",
+            "city": "Sassuolo"
     },
-    {
-      "key": "bologna",
-      "name": "Bologna",
-      "code": "BOL"
+        {
+            "key": "bologna",
+            "name": "Bologna",
+            "code": "BOL",
+            "city": "BOLOGNA"
     },
-    {
-      "key": "cagliari",
-      "name": "Cagliari",
-      "code": "CAG"
+        {
+            "key": "cagliari",
+            "name": "Cagliari",
+            "code": "CAG",
+            "city": "Cagliari"
     },
-    {
-      "key": "crotone",
-      "name": "Crotone",
-      "code": "CRO"
+        {
+            "key": "crotone",
+            "name": "Crotone",
+            "code": "CRO",
+            "city": "CROTONA"
     },
-    {
-      "key": "hellasverona",
-      "name": "Verona",
-      "code": "HEL"
+        {
+            "key": "hellasverona",
+            "name": "Verona",
+            "code": "HEL",
+            "city": "VERONA"
     },
-    {
-      "key": "spal",
-      "name": "SPAL",
-      "code": null
+        {
+            "key": "spal",
+            "name": "SPAL",
+            "code": null,
+            "city": "FERRARA"
     },
-    {
-      "key": "benevento",
-      "name": "Benevento",
-      "code": null
+        {
+            "key": "benevento",
+            "name": "Benevento",
+            "code": null,
+            "city": "BENEVENTO"
     }
   ]
 }

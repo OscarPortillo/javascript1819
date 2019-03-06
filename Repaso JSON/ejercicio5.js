@@ -37,19 +37,19 @@ function mostrarElementos() {
         var td4 = document.createElement("td");
         var td5 = document.createElement("td");
         var td6 = document.createElement("td");
-        tr.append(td1);
-        tr.append(td2);
-        tr.append(td3);
-        tr.append(td4);
-        tr.append(td5);
-        tr.append(td6);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tr.appendChild(td5);
+        tr.appendChild(td6);
         td1.innerHTML = dato.MACROAREA;
         td2.innerHTML = dato.ANO;
         td3.innerHTML = dato.EDAD;
         td4.innerHTML = dato.NUMERO_PDI;
         td5.innerHTML = dato.CATEGORIA_CUERPO_ESCALA;
         td6.innerHTML = dato.SEXO;
-        divContenedor.append(tr);
+        divContenedor.appendChild(tr);
     }
 } //funcion
 
@@ -63,7 +63,7 @@ function desplegableMacroarea() {
     arrayFiltrado = array.unique();
     for (opcion of arrayFiltrado) {
         var option = document.createElement("option");
-        opc.append(option);
+        opc.appendChild(option);
         option.innerHTML = opcion;
     }
     console.log(arrayFiltrado)
@@ -93,12 +93,12 @@ function verMacroareaFiltrada(macroAreaFiltrada){
         var td4 = document.createElement("td");
         var td5 = document.createElement("td");
         var td6 = document.createElement("td");
-        tr.append(td1);
-        tr.append(td2);
-        tr.append(td3);
-        tr.append(td4);
-        tr.append(td5);
-        tr.append(td6);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tr.appendChild(td5);
+        tr.appendChild(td6);
         td1.innerHTML = dato.MACROAREA;
         td2.innerHTML = dato.ANO;
         td3.innerHTML = dato.EDAD;
@@ -106,7 +106,7 @@ function verMacroareaFiltrada(macroAreaFiltrada){
         suma += dato.NUMERO_PDI;
         td5.innerHTML = dato.CATEGORIA_CUERPO_ESCALA;
         td6.innerHTML = dato.SEXO;
-        divContenedor.append(tr);
+        divContenedor.appendChild(tr);
     }
     var tr2 = document.createElement("tr");
     var td7 = document.createElement("td");
@@ -117,10 +117,10 @@ function verMacroareaFiltrada(macroAreaFiltrada){
     td8.innerHTML = "";
     td9.innerHTML = "";
     td10.innerHTML = suma;
-    tr2.append(td7);
-    tr2.append(td8);
-    tr2.append(td9);
-    tr2.append(td10);
-    divContenedor.append(tr2);
+    tr2.appendChild(td7);
+    tr2.appendChild(td8);
+    tr2.appendChild(td9);
+    tr2.appendChild(td10);
+    divContenedor.appendChild(tr2);
     console.log(suma)
 }
