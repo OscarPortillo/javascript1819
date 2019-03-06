@@ -8,9 +8,6 @@ Array.prototype.unique = function () {
     return this.filter((x, i, a) => a.indexOf(x, i + 1) < 0);
 }
 
-var objeto;
-
-
 function verDatos() {
     http = new XMLHttpRequest();
     http.onreadystatechange = mostrar;
@@ -29,7 +26,6 @@ function verDatos() {
             verNombreFiltrado(objeto)
             ordenar(objeto)
         }
-
     } // si todo va bien
 
 } //fin mostrar
@@ -76,7 +72,6 @@ function verNombreFiltrado(objeto) {
 }
 
 function filtrarNombre(objeto) {
-
     var select = document.getElementById("opciones");
     select.addEventListener('change',
         function () {
@@ -87,7 +82,6 @@ function filtrarNombre(objeto) {
                     var profeFiltrado = (objeto[profe].filter(a => a.Nombre.includes(nombre.value)))
                 }
             }
-            
             console.log(profeFiltrado)
             mostrarCambios(profeFiltrado)
 
@@ -129,14 +123,20 @@ function ordenar(objeto) {
                 for (o in objeto) {
                     //console.log(objeto[o])
                     var ordenar = objeto[o].sort(function (a, b) {
-                        if (a.Nombre > b.Nombre) {
-                            return 1;
-                        }
                         if (a.Nombre < b.Nombre) {
                             return -1;
                         }
-                        // a must be equal to b
-                        return 0;
+                    });
+                }
+                console.log(ordenar)
+                mostrarCambios(ordenar)
+            }
+            if (nombre.value == "Descendente") {
+                for (o in objeto) {
+                    var ordenar = objeto[o].sort(function (a, b) {
+                        if (a.Nombre > b.Nombre) {
+                            return -1;
+                        }
                     });
                 }
                 console.log(ordenar)
