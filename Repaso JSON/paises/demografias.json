@@ -1,0 +1,305 @@
+{
+    "crs": {
+        "type": "EPSG",
+        "properties": {
+            "code": 25830
+        }
+    },
+    "properties": [{
+        "property": "poblacion_edad_0_3",
+        "description": "Expresa la razÃ³n de poblaciÃ³n de 0 a 3 aÃ±os sobre el total de habitantes del distrito o junta, expresada en tanto por ciento.",
+        "units": "%",
+        "sources": "GEOT (Grupo de Estudios en Ordenacion del Territorio)",
+        "footLegend": "En la leyenda, la superficie del cÃ­rculo es proporcional al total de personas que reside en cada junta. El tamaÃ±o del cÃ­rculo mÃ¡s grande (J.M. Delicias) corresponde al mayor valor de la variable real (en este caso poblaciÃ³n total). AdemÃ¡s se ha tenido en  cuenta en el cÃ¡lculo de tamaÃ±os el valor mÃ­nimo para garantizar su correcta visualizaciÃ³n. El centro del cÃ­rculo se localiza sobre el centroide de las juntas.",
+        "doubleLegend": true,
+        "legend1": "PoblaciÃ³n entre 0 y 3 aÃ±os",
+        "legend2": "TamaÃ±o poblaciÃ³n total (nÃºmero de habitantes).",
+        "urlOpenData": "https://www.zaragoza.es/sede/servicio/catalogo/?fq=temas_smultiple%3A(%22DemografÃ­a%22)",
+        "timestamp": "2017",
+        "max": 6.81,
+        "min": 0,
+        "average": 2.41
+    }],
+    "type": "FeatureCollection",
+    "features": [{
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [659869.2, 4622793.8]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "Villarrapa"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [663722.3, 4620677.4]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "Casetas"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [670046.6, 4621373.9]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "Alfocea"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [668977.9, 4618676.3]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "Monzalbarba"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [671319.6, 4615231.8]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 1,
+            "NOMBRE": "Venta del Olivar"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [668938, 4612092.5]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "Garrapinillos"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [680616.9, 4615378.4]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 3,
+            "NOMBRE": "Santa Isabel"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [680501.9, 4613686.2]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 1,
+            "NOMBRE": "Movera"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [683141.5, 4625478.5]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 3,
+            "NOMBRE": "PeÃ±aflor"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [677996.1, 4617632.5]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "San Gregorio"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [679034.4, 4616647.5]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "San Juan de Mozarrifar"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [680070.6, 4616371.1]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "MontaÃ±ana"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [675435.9, 4617565.4]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 1,
+            "NOMBRE": "Juslibol - El Zorongo"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [678002.8, 4614977.3]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "El Rabal"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [676035.1, 4616166.4]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "Actur - Rey Fernando"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [678958.4, 4596801.5]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 0,
+            "NOMBRE": "Torrecilla de Valmadrid"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [676049.8, 4610605.4]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 3,
+            "NOMBRE": "Torrero - La Paz"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [672577.1, 4612422.4]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 3,
+            "NOMBRE": "Oliver - Valdefierro"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [672053, 4614083.5]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 4,
+            "NOMBRE": "Miralbueno"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [679417.7, 4609735.4]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 1,
+            "NOMBRE": "La Cartuja Baja"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [678144.3, 4612761.4]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "Las Fuentes"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [677415.5, 4611110.8]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 1,
+            "NOMBRE": "San JosÃ©"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [673068.8, 4610394.3]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 6,
+            "NOMBRE": "Casablanca"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [675041.1, 4611700.5]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "Universidad"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [674661.4, 4614210]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 1,
+            "NOMBRE": "La Almozara"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [674218.2, 4613049.6]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 1,
+            "NOMBRE": "Delicias"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [676259.8, 4612657.1]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 1,
+            "NOMBRE": "Centro"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [676592.4, 4613524.8]
+        },
+        "properties": {
+            "poblacion_edad_0_3": 2,
+            "NOMBRE": "Casco HistÃ³rico"
+        }
+    }]
+}

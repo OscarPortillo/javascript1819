@@ -28,7 +28,7 @@ var animarBarras = function () {
     var numero = 0
     $("#btnOn").on('click', function () {
         
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 1500; i++) {
             numero = Math.floor(Math.random() * long);
             console.log(numero)
             $(barrasArray[numero]).animate({
@@ -40,7 +40,8 @@ var animarBarras = function () {
 
 var pararAnimacion= function(){
     $("#btnOff").on('click',function(){
-        $(".barra").finish()
+        //$(".barra").finish()
+        $(".barra").stop(true,true)//el primero 
         $(".barra").animate({
             bottom : -250
         },"fast")

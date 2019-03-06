@@ -1,105 +1,77 @@
-{
-  "name": "Serie A 2017/18",
-  "clubs": [
-    {
-      "key": "milan",
-      "name": "Milan",
-      "code": "MIL"
-    },
-    {
-      "key": "inter",
-      "name": "Inter",
-      "code": "INT"
-    },
-    {
-      "key": "lazio",
-      "name": "Lazio",
-      "code": "LAZ"
-    },
-    {
-      "key": "roma",
-      "name": "Roma",
-      "code": "ROM"
-    },
-    {
-      "key": "genoa",
-      "name": "Genoa",
-      "code": "GEN"
-    },
-    {
-      "key": "sampdoria",
-      "name": "Sampdoria",
-      "code": "SAM"
-    },
-    {
-      "key": "juventus",
-      "name": "Juventus",
-      "code": "JUV"
-    },
-    {
-      "key": "torino",
-      "name": "Torino",
-      "code": "TOR"
-    },
-    {
-      "key": "napoli",
-      "name": "Napoli",
-      "code": "NAP"
-    },
-    {
-      "key": "atalanta",
-      "name": "Atalanta",
-      "code": "ATA"
-    },
-    {
-      "key": "chievoverona",
-      "name": "Chievo",
-      "code": "CHI"
-    },
-    {
-      "key": "fiorentina",
-      "name": "Fiorentina",
-      "code": "FIO"
-    },
-    {
-      "key": "udinese",
-      "name": "Udinese",
-      "code": "UDI"
-    },
-    {
-      "key": "sassuolo",
-      "name": "Sassuolo",
-      "code": "SAS"
-    },
-    {
-      "key": "bologna",
-      "name": "Bologna",
-      "code": "BOL"
-    },
-    {
-      "key": "cagliari",
-      "name": "Cagliari",
-      "code": "CAG"
-    },
-    {
-      "key": "crotone",
-      "name": "Crotone",
-      "code": "CRO"
-    },
-    {
-      "key": "hellasverona",
-      "name": "Verona",
-      "code": "HEL"
-    },
-    {
-      "key": "spal",
-      "name": "SPAL",
-      "code": null
-    },
-    {
-      "key": "benevento",
-      "name": "Benevento",
-      "code": null
-    }
-  ]
+window.onload = function () {
+    verDatos();
 }
+var objeto;
+Array.prototype.unique = function () {
+    return this.filter((x, i, a) => a.indexOf(x, i + 1) < 0);
+}
+
+function verDatos() {
+    http = new XMLHttpRequest();
+    http.onreadystatechange = mostrar;
+    http.open("GET", "./serieA.json", true);
+    http.send(null);
+
+    function mostrar() {
+        if (http.readyState == 4 && http.status == 200) {
+            let r = http.responseText;
+            objeto = JSON.parse(r);
+            verDatosDeEquipo(objeto)
+        }
+    }
+} //verDatos
+
+function verDatosDeEquipo(objeto) {
+    var titulo = document.getElementById("titulo")
+    var datos = document.getElementById("datos")
+
+    for (dato in objeto) {
+        var tr = document.createElement("tr")
+        if(Array.isArray(objeto[dato])){
+            for(otroDato of objeto[dato]){
+                //console.log(otroDato)
+                for(equipo in  otroDato){
+                    var td = document.createElement("td")
+                    if(otroDato[equipo] != null){
+                        td.innerHTML = otroDato[equipo]
+                    }else{
+                        td.innerHTML = " "
+                        console.log(" es null")
+                        
+                    }
+                    tr.append(td)
+                //console.log(otroDato[equipo])
+                    
+                }
+            }
+        }else {
+            titulo.innerHTML = objeto[dato]
+            console.log(objeto[dato])
+            console.log("no es un array")
+        }
+        datos.append(tr)
+    }
+}
+
+
+/*
+ for (dato in objeto) {
+        var tr = document.createElement("tr")
+        if (Array.isArray(objeto[dato])) {
+            //console.log("es un array")
+            for (datoE of objeto[dato]) {
+                //console.log(datoE)
+                for (equipo in datoE) {
+                var td = document.createElement("td")
+                    td.innerHTML = datoE[equipo]
+                    tr.append(td)
+                    console.log(datoE[equipo])
+                }
+            }
+        } else {
+            titulo.innerHTML = objeto[dato]
+            console.log(objeto[dato])
+            console.log("no es un array")
+        }
+        datos.append(tr)
+    }*/
