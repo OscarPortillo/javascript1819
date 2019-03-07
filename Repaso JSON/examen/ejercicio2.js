@@ -14,3 +14,21 @@ for (i = 1; i < N.length; i++) {
 }
 
 console.log(crece && decrece);
+
+///otra solucion
+var crece = false;
+var decrece = false;
+
+const cadena = '12341'
+const n = cadena.toString()
+const m = n.length
+console.log(m)
+for (i of m) {
+    console.log(i)
+    if (i[i - 1] < m) {
+        decrece = true;
+    } else if (i[i + 1] > m) {
+        crece = true;
+    }
+}
+console.log(crece && decrece)
