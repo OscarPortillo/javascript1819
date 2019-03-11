@@ -10,16 +10,11 @@ window.onload = function () {
 function llamarFunciones() {
     document.getElementById("btn1").onclick = function () {
         añadir()
-        eliminar()
-
     };
-
-
 }
 
 
 function añadir() {
-
     var nombre = document.getElementById("nombre").value;
     var apellidos = document.getElementById("apellidos").value;
     var email = document.getElementById("email").value;
@@ -33,13 +28,9 @@ function añadir() {
 
 }
 
-function eliminar() {
-    var botones = document.getElementsByTagName("button")
-    //console.log(botones)
-    for (i of botones) {
-        console.log(i)
-    }
-    //arrayNombre.splice(id, 1);
+function eliminar(id) {
+    //alert(id)
+    arrayNombre.splice(id, 1);
     imprimir();
 }
 
@@ -58,10 +49,11 @@ function imprimir() {
         var nombreImpr = "<p><strong>Nombre:</strong>" + nombreMostrar + "</p>"
         var apellidoImpr = "<p><strong>Apellido:</strong>" + apellidoMostrar + "</p>"
         var emailImpr = "<p><strong>Email:</strong>" + emailMostrar + "</p>"
-        //var botonBorrar = "<button onclick=eliminar(" + botonMostrar + ") id=" + botonMostrar + ">Eliminar</button>";
-        var botonBorrar = "<button class='borrar' id=" + botonMostrar + ">Eliminar</button>";
+        var botonBorrar = "<button onclick=eliminar(" + botonMostrar + ") id=" + botonMostrar + ">Eliminar</button>";
 
         imprimir += nombreImpr + apellidoImpr + emailImpr + botonBorrar + "<br> <br>";
     }
     document.getElementById("resultados").innerHTML = imprimir;
 }
+
+
