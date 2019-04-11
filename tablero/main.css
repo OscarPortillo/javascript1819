@@ -1,0 +1,36 @@
+html, body{
+  height: 100%;
+  width: 100%;
+  background-color:whitesmoke;
+}
+#tablero{
+  width:420px;
+  height:420px;
+  margin: auto;
+  background: lightgray;
+}
+.casillas{
+  width:52px;
+  height: 52px;
+  float:left;
+}
+.negras{
+ background-color: black; 
+}
+.blancas{
+  background-color: white;
+}
+.azules{
+  background-color: blue;
+}
+.rojas{
+  background-color: red;
+}
+
+.naranja{
+  background-color:orange;
+}
+
+.verde{
+  background-color:green;
+}
