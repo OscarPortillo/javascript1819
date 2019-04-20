@@ -1,0 +1,28 @@
+{
+    "verbs":[
+        {
+            "infinitive":"be",
+            "past simple":"was / were",
+            "past participle":"been",
+            "sapanish":"ser / estar"
+        },
+        {
+            "infinitive":"become",
+            "past simple":"became",
+            "past participle":"become",
+            "sapanish":"convertise en / hacerse"
+        },
+        {
+            "infinitive":"begin",
+            "past simple":"began",
+            "past participle":"begun",
+            "sapanish":"empezar / comenzar"
+        },
+        {
+            "infinitive":"bite",
+            "past simple":"bit",
+            "past participle":"bitten",
+            "sapanish":"morder"
+        }
+    ]
+}
