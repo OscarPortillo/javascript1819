@@ -26,6 +26,7 @@ function cargarAjax() {
             filtrarPorSexo();
             mostrarDatosParaFiltrar();
             rellenarSelects();
+            detectarEnter();
         }
     }
 
@@ -82,7 +83,7 @@ function rellenarSelects() {
     var selectRaza = document.getElementById("raza");
     var selectCastrado = document.getElementById("castrado");
     var opcVacio = document.createElement("option");
-    opcVacio.innerHTML=""
+    opcVacio.innerHTML = ""
     for (sexo of sexoGato) {
         var opcSexo = document.createElement("option");
         opcSexo.innerHTML = sexo;
@@ -131,7 +132,38 @@ function filtrarPorSexo() {
                 resultado.append(ul)
             }
         });
+}
 
+function detectarEnter(e) {
+    var resultado = document.getElementById("contenedor");
+    var enter = addEventListener("keypress",
+        function (e) {
+        if(e.keyCode == 13){
+            e.preventDefault();//detiene la ejecucion de reinicio o mas o emnos
+            console.log("Has pulsado enter");
+            var nombre=document.getElementsByTagName("input")[0].value;//obtengo el valor introducidso en el input
+            if (objeto.gatos.filter(a => a.nombre.includes(nombre))) {
+                var objetoAux = (objeto.gatos.filter(a => a.nombre.includes(nombre)))
+            }
+            console.log(objeto)
+            document.getElementById("contenedor").innerHTML = "";
+            for (dato of objetoAux) {
+                var ul = document.createElement("ul");
+                for (gato in dato) {
+                    var li = document.createElement("li");
+                    li.classList.add('list-group-item');
+                    if (gato == "ruta") {
+                        var imagen = document.createElement("img");
+                        imagen.src = dato[gato];
+                        li.append(imagen);
+                    } else {
+                        li.innerHTML = dato[gato];
 
-
+                    }
+                    ul.append(li)
+                }
+                resultado.append(ul)
+            }
+        }
+        })
 }
