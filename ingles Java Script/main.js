@@ -24,7 +24,14 @@ function crearTabla() {
     var datos = document.getElementById("datos");
     for (verbo in objeto) {
         for (verb of objeto[verbo]) {
-            console.log(verb)
+            var tr = document.createElement("tr");
+            for (ve in verb) {
+                var td = document.createElement("td");
+                td.innerHTML = verb[ve]
+                tr.append(td)
+                console.log(verb[ve]);
+            }
+            datos.append(tr)
         }
     }
 }

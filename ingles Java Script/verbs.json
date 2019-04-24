@@ -23,6 +23,60 @@
             "past simple":"bit",
             "past participle":"bitten",
             "sapanish":"morder"
+        },
+        {
+            "infinitive":"blow",
+            "past simple":"blew",
+            "past participle":"blown",
+            "sapanish":"soplar"
+        },
+        {
+            "infinitive":"break",
+            "past simple":"broke",
+            "past participle":"broken",
+            "sapanish":"romper"
+        },
+        {
+            "infinitive":"bring",
+            "past simple":"brought",
+            "past participle":"brought",
+            "sapanish":"llevar / traer"
+        },
+        {
+            "infinitive":"build",
+            "past simple":"built",
+            "past participle":"built",
+            "sapanish":"construir"
+        },
+        {
+            "infinitive":"buy",
+            "past simple":"bought",
+            "past participle":"bought",
+            "sapanish":"comprar"
+        },
+        {
+            "infinitive":"",
+            "past simple":"",
+            "past participle":"",
+            "sapanish":""
+        },
+        {
+            "infinitive":"",
+            "past simple":"",
+            "past participle":"",
+            "sapanish":""
+        },
+        {
+            "infinitive":"",
+            "past simple":"",
+            "past participle":"",
+            "sapanish":""
+        },
+        {
+            "infinitive":"",
+            "past simple":"",
+            "past participle":"",
+            "sapanish":""
         }
     ]
 }
