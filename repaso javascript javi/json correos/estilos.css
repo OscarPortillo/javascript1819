@@ -1,0 +1,16 @@
+#contenedor{
+    width: 40%;
+}
+.datos{
+    text-align: center;
+    padding: 10px;
+    background-color: burlywood; 
+}
+.cambio{
+    padding: 10px;
+    background-color:forestgreen; 
+}
+button{
+    display: none;
+    float: right;
+}

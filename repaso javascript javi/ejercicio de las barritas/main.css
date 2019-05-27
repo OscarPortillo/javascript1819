@@ -1,0 +1,24 @@
+html, body{
+  height:100%;
+  width:100%;
+}
+#equ {
+  width: 608px;
+  height: 300px;
+  background-color: black;
+  overflow: hidden;
+}
+.cont{
+  height: 100%;
+  //background-color: cyan;
+  float:left;
+  margin: 2px;
+}
+.barra{
+  background-color: orange;
+  position: relative;
+  height: 500px;
+  width: 15px;
+  bottom: -250px;
+}
+
