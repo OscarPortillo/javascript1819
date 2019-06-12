@@ -15,6 +15,7 @@ var cargarAjax = function () {
         verEquipos(respuesta)
         filtarCompeticion(respuesta)
         mostrarPorFiltro(respuesta)
+        console.log("hola maría");
         //console.log("final Lectura ajax");
     }).fail(function () {
         console.log("Fallo");
