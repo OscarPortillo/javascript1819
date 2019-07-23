@@ -1,0 +1,57 @@
+.punto {
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    display: inline-block;
+    border-radius: 100px;
+}
+.container{
+    padding: 30%;
+}
+body{
+    background-color:aquamarine;
+}
+.punto:nth-child(1){
+    background: lightblue;
+    animation: up 1s infinite ease-in-out;
+}
+.punto:nth-child(2){
+    background: lightcoral;
+    animation: up 2s infinite ease-in-out;
+}
+.punto:nth-child(3){
+    background: blue;
+    animation: up 1s infinite ease-in-out;
+}
+.punto:nth-child(4){
+    background: grey;
+    animation: up 2s infinite ease-in-out;
+}
+.punto:nth-child(5){
+    background: red;
+    animation: up 1s infinite ease-in-out;
+}
+.punto:nth-child(6){
+    background: violet;
+    animation: up 2s infinite ease-in-out;
+}
+.punto:nth-child(7){
+    background: lightcoral;
+    animation: up 1s infinite ease-in-out;
+}
+.punto:nth-child(8){
+    background: lightcoral;
+    animation: up 2s infinite ease-in-out;
+}
+
+@keyframes up{
+    0% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
